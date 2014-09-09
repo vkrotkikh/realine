@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+
+	<script type='text/javascript' src='js/jquery.min.js'></script>
+	<script type='text/javascript' src='js/less-1.7.4.min.js'></script>
+	<script type='text/javascript' src='js/main.js'></script>
+
+	<title>Realine</title>
+</head>
+<body class="aside_menu">
+	<header class="site_header fixed">
+		<section class="first_row">
+			<div class="h_user_modules">
+				<div class="modules_container">
+					<ul class="modules_list">
+						<li class="block_notification"><a class="icon ico_notifications" href="javascript:void(0);"><span>2</span></a>
+							<div class="notifications_container">
+								<h4>Notifications</h4>
+								<ul>
+									<li class="cf">
+										<i class="icon ico_close black notification_remove"></i>
+										<img class="notification_img" src="images/avatar24x24.1.jpg">
+										<div class="notification_body">
+											<span class="notification_text">Sounds great, I’ll add a request in Realine. Thanks.</span>
+											<span class="notification_time">2 minut ago</span>
+										</div>
+									</li>
+									<li class="cf">
+										<i class="icon ico_close black notification_remove"></i>
+										<img class="notification_img" src="images/avatar24x24.1.jpg">
+										<div class="notification_body">
+											<span class="notification_text">Sounds great, I’ll add a request in Realine. Thanks.</span>
+											<span class="notification_time">2 minut ago</span>
+										</div>
+									</li>
+								</ul>
+								<a class="notifications_all">Show all</a>
+							</div>
+						</li>
+						<li class="extension_link"><a class="icon ico_messages" href="javascript:void(0);"><span>3</span></a></li>
+						<li class="extension_link"><a class="icon ico_contact" href="javascript:void(0);"></a></li>
+					</ul>
+				</div>
+				<a class="user_container cf">
+					<span class="user_picture">
+						<img src="images/avatar40x40.1.jpg">
+					</span>
+					<span class="user_info">
+						<span class="user_name" href="javascript:void(0);">Lucas Kafarski</span>
+						<span class="user_company">Realine</span>
+					</span>
+				</a>
+			</div>
+			<div class="h_logo_search">
+				<a href="/" class="header_logo">
+					<img src="images/user-company-logo.png" alt="" width="85" height="32">
+				</a>
+				<div class="search_container">
+					<input class="search_input" type="text" placeholder="Request id, origin or destionation">
+					<button></button>
+				</div>
+			</div>
+		</section>
+		<section class="second_row">
+			<div class="submenu_extensions">
+				<ul class="extensions_list">
+					<li class="extension_link"><a class="icon icon_share" href="javascript:void(0);"></a></li>
+					<li class="extension_link"><a class="icon icon_n_subscribe" href="javascript:void(0);"></a></li>
+					<li class="extension_link"><a class="icon icon_templates" href="javascript:void(0);"></a></li>
+				</ul>				
+			</div>
+			<div class="sumbenu_dashboard_nav">
+				<div class="sumbenu_dashboard">
+					<button class="btn btn_red btn_dasboard">Shipping</button>
+					<div class="dasboard_container"></div>
+				</div>
+				<div class="submenu_nav">
+					<ul>
+						<li><button class="btn btn_light_gray btn_back">Back to list</button></li>
+						<li><button class="btn btn_light_gray">Groups</button></li>
+						<li><button class="btn btn_light_gray btn_dropdown">Actions</button>
+						<ul class="sumbenu_dropdown">
+							<li><button class="btn btn_light_gray">Groups</button></li>
+							<li><button class="btn btn_light_gray">Groups</button></li>
+							<li><button class="btn btn_light_gray">Groups</button></li>
+						</ul>
+						</li>
+						<li><button class="btn btn_dark_gray btn_save popup_show">Save</button></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</header>
+	<div class="main_content cf">
+			<a class="sidebar_menu_toggle"></a>
+		<aside class="sidebar_left">
+			<ul class="sidebar_menu_list">
+				<li><a href="javascript:void(0);">All<span>45</span></a></li>
+				<li class="active parent"><a href="javascript:void(0);">Starred<span>61</span></a>
+					<ul>
+						<li><a href="javascript:void(0);">Bulky cargo<span>22</span></a></li>
+						<li class="active current"><a href="javascript:void(0);">New<span>0</span></a></li>
+						<li class="action add_tag"><a href="javascript:void(0);">Add tag</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:void(0);">New<span>35</span></a></li>
+				<li><a href="javascript:void(0);">Pending<span>1</span></a></li>
+				<li><a href="javascript:void(0);">In transit<span>48</span></a></li>
+				<li class="item_sepparator favourite"><a href="javascript:void(0);">Favorites<span>2</span></a></li>
+
+			</ul>
+		</aside>
+		<section class="content_container">
+			<header class="content_header">
+				<div class="header_container">
+					<div class="user_viewing">
+						<ul class="user_viewing_list">
+							<li><img src="images/avatar24x24.2.jpg"></li>
+							<li><img src="images/avatar24x24.3.jpg"></li>
+						</ul>
+					</div>
+					<h2>Shipment request GKLKL78</h2>
+				</div>
+				<div class="request_info">
+					<span class="request_status"><i class="icon ico_intransit"></i><span class="request_text">In transit</span></span>
+					<span class="request_status_details">Created on march 19 at 15:00 by <a href="javascript:void(0);" class="gray_link">Chris Dennis</a></span>
+				</div>
+			</header>
+			<section class="request_details_container">
+				<ul class="default_tabs">
+					<li><a href="javascript:void(0);" class="active">GKLKL78</a></li>
+					<li><a href="javascript:void(0);">+ add linked request</a></li>
+				</ul>
+				<div class="cf tabs_content">
+					<section class="float_block">
+						<div class="block_info block_map">
+							<img src="images/fake_map.png">
+							<div class="map_info">
+								<p>Estimated time: <span class="map_info_time">22:56 hours</span></p>
+								<p>Distance: <span class="map_info_distance">22:56 hours</span></p>
+							</div>
+						</div>
+					</section>
+					<div class="main_column">
+						<div class="block_group">
+							<div class="block_row cf">
+								<label><h4 class="label_text">Business Partner</h4><input type="text"></label>
+							</div>
+						</div>
+						<div class="block_group">
+							<h4>Origin</h4>
+							<div class="block_row cf">
+								<label>
+									<span class="label_text">Location</span>
+									<span class="long_input input_wrapper"><i class="icon icon_location"></i><input type="text"></span>
+								</label>
+							</div>
+							<div class="block_row cf">
+								<label>
+									<span class="label_text">Ready</span>
+									<span class="input_wrapper"><i class="icon icon_calendar"></i><input type="text"></span>
+								</label>
+								<label>
+									<span class="input_sepparator">at</span>
+									<span class="input_wrapper"><i class="icon icon_clock"></i><input type="text"></span>
+								</label>
+							</div>
+							<div class="block_row cf">
+								<label>
+									<span class="label_text">Pickup window</span>
+									<span class="input_wrapper"><i class="icon icon_clock"></i><input type="text"></span>
+								</label>
+							</div>
+							<h4>Destination</h4>
+							<div class="block_row cf">
+								<label>
+									<span class="label_text">Location</span>
+									<span class="long_input input_wrapper"><i class="icon icon_location"></i><input type="text"></span>
+								</label>
+							</div>
+							<div class="block_row cf">
+								<label>
+								<span class="label_text">Ready</span>
+								<span class="input_wrapper"><i class="icon icon_calendar"></i><input type="text"></span>
+								<label>
+								<span class="input_sepparator">at</span>
+									<select>
+										<option value=""></option>
+										<option value="0:00 am">00:00 am</option>
+										<option value="0:15 am">00:15 am</option>
+										<option value="0:30 am">00:30 am</option>
+										<option value="0:45 am">00:45 am</option>
+										<option value="1:00 am">01:00 am</option>
+										<option value="1:15 am">01:15 am</option>
+										<option value="1:30 am">01:30 am</option>
+										<option value="1:45 am">01:45 am</option>
+										<option value="2:00 am">02:00 am</option>
+										<option value="2:15 am">02:15 am</option>
+										<option value="2:30 am">02:30 am</option>
+										<option value="2:45 am">02:45 am</option>
+										<option value="3:00 am">03:00 am</option>
+										<option value="3:15 am">03:15 am</option>
+										<option value="3:30 am">03:30 am</option>
+										<option value="3:45 am">03:45 am</option>
+										<option value="4:00 am">04:00 am</option>
+										<option value="4:15 am">04:15 am</option>
+										<option value="4:30 am">04:30 am</option>
+										<option value="4:45 am">04:45 am</option>
+										<option value="5:00 am">05:00 am</option>
+										<option value="5:15 am">05:15 am</option>
+										<option value="5:30 am">05:30 am</option>
+										<option value="5:45 am">05:45 am</option>
+										<option value="6:00 am">06:00 am</option>
+										<option value="6:15 am">06:15 am</option>
+										<option value="6:30 am">06:30 am</option>
+										<option value="6:45 am">06:45 am</option>
+										<option value="7:00 am">07:00 am</option>
+										<option value="7:15 am">07:15 am</option>
+										<option value="7:30 am">07:30 am</option>
+										<option value="7:45 am">07:45 am</option>
+										<option value="8:00 am">08:00 am</option>
+										<option value="8:15 am">08:15 am</option>
+										<option value="8:30 am">08:30 am</option>
+										<option value="8:45 am">08:45 am</option>
+										<option value="9:00 am">09:00 am</option>
+										<option value="9:15 am">09:15 am</option>
+										<option value="9:30 am">09:30 am</option>
+										<option value="9:45 am">09:45 am</option>
+										<option value="10:00 am">10:00 am</option>
+										<option value="10:15 am">10:15 am</option>
+										<option value="10:30 am">10:30 am</option>
+										<option value="10:45 am">10:45 am</option>
+										<option value="11:00 am">11:00 am</option>
+										<option value="11:15 am">11:15 am</option>
+										<option value="11:30 am">11:30 am</option>
+										<option value="11:45 am">11:45 am</option>
+										<option value="0:00 pm">00:00 pm</option>
+										<option value="0:15 pm">00:15 pm</option>
+										<option value="0:30 pm">00:30 pm</option>
+										<option value="0:45 pm">00:45 pm</option>
+										<option value="1:00 pm">01:00 pm</option>
+										<option value="1:15 pm">01:15 pm</option>
+										<option value="1:30 pm">01:30 pm</option>
+										<option value="1:45 pm">01:45 pm</option>
+										<option value="2:00 pm">02:00 pm</option>
+										<option value="2:15 pm">02:15 pm</option>
+										<option value="2:30 pm">02:30 pm</option>
+										<option value="2:45 pm">02:45 pm</option>
+										<option value="3:00 pm">03:00 pm</option>
+										<option value="3:15 pm">03:15 pm</option>
+										<option value="3:30 pm">03:30 pm</option>
+										<option value="3:45 pm">03:45 pm</option>
+										<option value="4:00 pm">04:00 pm</option>
+										<option value="4:15 pm">04:15 pm</option>
+										<option value="4:30 pm">04:30 pm</option>
+										<option value="4:45 pm">04:45 pm</option>
+										<option value="5:00 pm">05:00 pm</option>
+										<option value="5:15 pm">05:15 pm</option>
+										<option value="5:30 pm">05:30 pm</option>
+										<option value="5:45 pm">05:45 pm</option>
+										<option value="6:00 pm">06:00 pm</option>
+										<option value="6:15 pm">06:15 pm</option>
+										<option value="6:30 pm">06:30 pm</option>
+										<option value="6:45 pm">06:45 pm</option>
+										<option value="7:00 pm">07:00 pm</option>
+										<option value="7:15 pm">07:15 pm</option>
+										<option value="7:30 pm">07:30 pm</option>
+										<option value="7:45 pm">07:45 pm</option>
+										<option value="8:00 pm">08:00 pm</option>
+										<option value="8:15 pm">08:15 pm</option>
+										<option value="8:30 pm">08:30 pm</option>
+										<option value="8:45 pm">08:45 pm</option>
+										<option value="9:00 pm">09:00 pm</option>
+										<option value="9:15 pm">09:15 pm</option>
+										<option value="9:30 pm">09:30 pm</option>
+										<option value="9:45 pm">09:45 pm</option>
+										<option value="10:00 pm">10:00 pm</option>
+										<option value="10:15 pm">10:15 pm</option>
+										<option value="10:30 pm">10:30 pm</option>
+										<option value="10:45 pm">10:45 pm</option>
+										<option value="11:00 pm">11:00 pm</option>
+										<option value="11:15 pm">11:15 pm</option>
+										<option value="11:30 pm">11:30 pm</option>
+										<option value="11:45 pm">11:45 pm</option>
+									</select>
+								</label>
+							</div>
+							<div class="block_row cf">
+								<label>
+									<span class="label_text">Pickup window</span>
+									<select>
+										<option></option>
+										<option></option>
+									</select>
+								<label>
+									<span class="input_sepparator">—</span>
+									<select>
+										<option></option>
+										<option></option>
+									</select>
+								</label>
+							</div>
+						</div>
+						<div class="block_group">
+							<div class="block_row cf">
+								<label>
+								<h4 class="label_text">Routing center</h4>
+								<select>
+									<option>Routing Center</option>
+									<option></option>
+								</select>
+								</label>
+							</div>
+						</div>
+						<div class="block_group">
+							<h4>Package</h4>
+							<div class="block_row cf">
+								<label><span class="label_text">Commodity</span><input type="text"></label>
+							</div>
+							<div class="block_row cf">
+								<label><span class="label_text">Weight</span><input type="text">
+								<select>
+									<option>kg</option>
+									<option>lb</option>
+								</select>
+								</label>
+							</div>
+							<div class="block_row cf">
+								<label><span class="label_text">Volume</span><input type="text">
+								<select>
+									<option>m³</option>
+									<option>gal</option>
+								</select>
+								</label>
+							</div>
+							<div class="block_row cf">
+								<label><span class="label_text">Pieces</span><input type="text"></label>
+							</div>
+							<div class="block_row cf">
+								<label><span class="label_text">Mode type</span><input type="text"></label>
+							</div>
+							<div class="block_row cf">
+								<label>
+									<span class="label_text">Equipment</span>
+									<span class="long_input input_wrapper"><input type="text"></span>
+								</label>
+							</div>
+							<div class="block_row cf">
+								<span class="label_text">Additionally</span>
+								<div class="checkboxes_block">
+									<label><input type="checkbox">Overweight</label> 
+									<label><input type="checkbox">Oversize</label> 
+									<label><input type="checkbox">Expedite</label> 
+									<label><input type="checkbox">Hazmat</label> 
+								</div>
+							</div>
+						</div>
+						<div class="block_group">
+							<div class="block_row cf">
+								<label><h4 class="label_text">Package Parts</h4><input type="text" placeholder="Number"></label>
+								<div class="inputs_list cf">
+									<div class="inputs_row package_row cf">
+										<input type="text" placeholder="Number">
+										<input type="text" placeholder="Description">
+										<input type="text" placeholder="Qty">
+										<input type="text" placeholder="Qty">
+										<a class="icon ico_close black" href="javascript:void(0);"></a>
+									</div>
+									<div class="inputs_row package_row cf">
+										<input type="text" placeholder="Number">
+										<input type="text" placeholder="Description">
+										<input type="text" placeholder="Qty">
+										<input type="text" placeholder="Qty">
+										<a class="icon ico_close black" href="javascript:void(0);"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="block_group">
+							<div class="block_row cf">
+								<label><h4 class="label_text">References</h4><input type="text" placeholder="Number"></label>
+								<div class="inputs_list cf">
+									<div class="inputs_row references_row cf">
+										<input type="text" placeholder="Title">
+										<input type="text" placeholder="Description">
+										<input type="text" placeholder="Qty">
+										<a class="icon ico_close black" href="javascript:void(0);"></a>
+									</div>
+									<div class="inputs_row references_row cf">
+										<input type="text" placeholder="Number">
+										<input type="text" placeholder="Description">
+										<input type="text" placeholder="Qty">
+										<a class="icon ico_close black" href="javascript:void(0);"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="block_group">
+							<div class="block_row cf">
+								<label>
+									<h4 class="label_text">Additional services</h4>
+									<span class="long_input input_wrapper"><input type="text"></span>
+								</label>
+							</div>
+						</div>
+						<div class="block_group">
+							<div class="block_row cf">
+								<h4 class="label_text">Attachments</h4><input type="text" placeholder="Add by Email">
+							</div>
+							<div class="attach_files_block">
+								<ul class="files_list">
+									<li>
+										<i class="icon icon_file"></i>
+										<span>lorem_ipsum.pdf</span>
+										<a class="icon ico_close black" href="javascript:void(0);"></a>
+									</li>
+									<li>
+										<i class="icon icon_file"></i>
+										<span>Dolor_12.img</span>
+										<a class="icon ico_close black" href="javascript:void(0);"></a>
+									</li>
+									<li>
+										<i class="icon icon_file"></i>
+										<span>Sit_Amet.doc</span>
+										<a class="icon ico_close black" href="javascript:void(0);"></a>
+									</li>
+								</ul>
+								<div class="btn_attach_default">
+									<label for="add_files_01">
+										<button class="btn btn_light_gray add_files">Add Files</button> <span>or drop here</span>
+										<input type="file" id="add_files_01">
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+						<section class="float_block block_group">
+							<div class="block_info block_tags">
+								<label>
+									<span class="block_info_title">Tags</span>
+									<input type="text">
+								</label>
+							</div>
+							<div class="block_info">
+								<span class="block_info_title">Priority</span>
+								<div class="radio_container">
+									<label class="green btn_light_gray">
+										Low
+										<input type="radio" name="priority">
+									</label>
+									<label class="gray btn_light_gray">
+										Normal
+										<input type="radio" name="priority">
+									</label>
+									<label class="red btn_light_gray">
+										High
+										<input type="radio" name="priority">
+									</label>
+								</div>
+							</div>
+							<div class="block_info">
+								<label>
+									<span class="block_info_title">Notes and instructions</span>
+									<textarea name="notes" cols="30" rows="6"></textarea>
+								</label>
+							</div>
+						</section>						
+						<div class="button_row cf">
+							<button class="btn btn_dark_gray">Save request</button> <a class="dotted_link" href="javascript:void(0);">Reset and back to list</a>
+						</div>
+				</div>
+			</section>
+		</section>
+		<aside class="sidebar_right extension_bar">
+			<a class="icon icon_drag drag_sidebar" href="javascript:void(0);"></a>
+			<div class="sidebar_body">Blank extension</div>
+		</aside>
+	</div>
+	<div class="popup_container chat_container">
+		<header>
+		<ul class="popup_navigation">
+			<li><a class="icon chat_settings ico_settings_small" href="javascript:void(0);"></a></li>
+			<li><a class="icon chat_close ico_close white" href="javascript:void(0);"></a></li>
+		</ul>
+		<span class="popup_title">Steve Jobs</span>
+		</header>
+		<section class="chat_body_container">
+			<div class="chat_body">
+				<div class="message_in cf">
+					<img class="user_piture" src="images/avatar24x24.6.jpg">
+					<div class="message_body">
+						<span class="text_message">Let me khow. See you.</span>
+						<span class="time_mesage">3 minut ago</span>
+					</div>
+				</div>
+				<div class="message_out cf">
+					<img class="user_piture" src="images/avatar24x24.1.jpg">
+					<div class="message_body">
+						<span class="text_message">Sounds great, I’ll add a request in Realine. Thanks.</span>
+						<span class="time_mesage">2 minut ago</span>
+					</div>
+				</div>
+				<div class="message_in cf">
+					<img class="user_piture" src="images/avatar24x24.6.jpg">
+					<div class="message_body">
+						<span class="text_message">Let me khow. See you.</span>
+						<span class="time_mesage">3 minut ago</span>
+					</div>
+				</div>
+				<div class="message_out cf">
+					<img class="user_piture" src="images/avatar24x24.1.jpg">
+					<div class="message_body">
+						<span class="text_message">Sounds great, I’ll add a request in Realine. Thanks.</span>
+						<span class="time_mesage">2 minut ago</span>
+					</div>
+				</div>
+				<div class="message_in cf">
+					<img class="user_piture" src="images/avatar24x24.6.jpg">
+					<div class="message_body">
+						<span class="text_message">Let me khow. See you.</span>
+						<span class="time_mesage">3 minut ago</span>
+					</div>
+				</div>
+				<div class="message_out cf">
+					<img class="user_piture" src="images/avatar24x24.1.jpg">
+					<div class="message_body">
+						<span class="text_message">Sounds great, I’ll add a request in Realine. Thanks.</span>
+						<span class="time_mesage">2 minut ago</span>
+					</div>
+				</div>
+				<div class="message_in cf">
+					<img class="user_piture" src="images/avatar24x24.6.jpg">
+					<div class="message_body">
+						<span class="text_message">Let me khow. See you.</span>
+						<span class="time_mesage">3 minut ago</span>
+					</div>
+				</div>
+				<div class="message_out cf">
+					<img class="user_piture" src="images/avatar24x24.1.jpg">
+					<div class="message_body">
+						<span class="text_message">Sounds great, I’ll add a request in Realine. Thanks.</span>
+						<span class="time_mesage">2 minut ago</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="chat_form">
+			<div class="attach_file">
+				<input type="file">
+			</div>
+			<input class="message_field" type="text" placeholder="Enter message">
+		</div>
+	</div>
+	<footer class="cf site_footer">
+		<div class="footer_menu">
+			<ul class="footer_menu_items">
+				<li><a href="javascript:void(0);">About</a></li>
+				<li><a href="javascript:void(0);">Help</a></li>
+				<li><a href="javascript:void(0);">Support</a></li>
+				<li><a href="javascript:void(0);">Terms of use</a></li>
+			</ul>
+		</div>
+		<div class="copyrights">© Realine, 2014</div>
+	</footer>
+	<div class="hidden_templates">
+		<div class="popup_wrapper">
+			<div class="popup_container default_popup">
+				<header>
+				<ul class="popup_navigation">
+					<li><a class="icon chat_close ico_close white" href="javascript:void(0);"></a></li>
+				</ul>
+				<span class="popup_title">Default Popup</span>
+				</header>
+				<div class="popup_body">
+					<p>popup body</p>
+				</div>
+			</div>
+			<div class="popup_overlay"></div>
+		</div>
+	</div>
+</body>
+</html>

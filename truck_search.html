@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+
+	<script type='text/javascript' src='js/jquery.min.js'></script>
+	<script type='text/javascript' src='js/less-1.7.4.min.js'></script>
+	<script type='text/javascript' src='js/main.js'></script>
+
+	<title>Realine - Truck Search</title>
+</head>
+<body class="truck_search">
+	<header class="site_header fixed">
+		<section class="first_row">
+			<div class="h_user_modules">
+				<div class="modules_container">
+					<ul class="modules_list">
+						<li class="block_notification"><a class="icon ico_notifications" href="javascript:void(0);"><span>2</span></a>
+							<div class="notifications_container">
+								<h4>Notifications</h4>
+								<ul>
+									<li class="cf">
+										<i class="icon ico_close black notification_remove"></i>
+										<img class="notification_img" src="images/avatar24x24.1.jpg">
+										<div class="notification_body">
+											<span class="notification_text">Sounds great, I’ll add a request in Realine. Thanks.</span>
+											<span class="notification_time">2 minut ago</span>
+										</div>
+									</li>
+									<li class="cf">
+										<i class="icon ico_close black notification_remove"></i>
+										<img class="notification_img" src="images/avatar24x24.1.jpg">
+										<div class="notification_body">
+											<span class="notification_text">Sounds great, I’ll add a request in Realine. Thanks.</span>
+											<span class="notification_time">2 minut ago</span>
+										</div>
+									</li>
+								</ul>
+								<a class="notifications_all">Show all</a>
+							</div>
+						</li>
+						<li class="extension_link"><a class="icon ico_messages" href="javascript:void(0);"><span>3</span></a></li>
+						<li class="extension_link"><a class="icon ico_contact" href="javascript:void(0);"></a></li>
+					</ul>
+				</div>
+				<a class="user_container cf">
+					<span class="user_picture">
+						<img src="images/avatar40x40.1.jpg">
+					</span>
+					<span class="user_info">
+						<span class="user_name" href="javascript:void(0);">Lucas Kafarski</span>
+						<span class="user_company">Realine</span>
+					</span>
+				</a>
+			</div>
+			<div class="h_logo_search">
+				<a href="/" class="header_logo">
+					<img src="images/user-company-logo.png" alt="" width="85" height="32">
+				</a>
+				<div class="search_container">
+					<input class="search_input" type="text" placeholder="Request id, origin or destionation">
+					<button></button>
+				</div>
+			</div>
+		</section>
+		<section class="second_row">
+			<div class="submenu_extensions">
+				<ul class="extensions_list">
+					<li class="extension_link"><a class="icon icon_search_menu" href="javascript:void(0);"></a></li>
+					<li class="extension_link"><a class="icon icon_fav_doc" href="javascript:void(0);"></a></li>
+				</ul>				
+			</div>
+			<div class="submenu_labels">
+				<ul class="labels_list">
+					<li class="red">Loaded</li>
+					<li class="green">Free</li>
+				</ul>
+			</div>
+				<div class="sumbenu_dashboard">
+					<button class="btn btn_red btn_dasboard">Shipping</button>
+				</div>
+			<div class="trucks_container">
+				<button class="btn btn_light_gray start_search">Start new Search</button>
+				<ul class="two_rows_list all_trucks">
+					<li>
+						<span class="tr_title"><span class="figures">64</span> Trucks</span>
+						<span class="tr_subtitle">Available</span>
+					</li>
+				</ul>
+				<ul class="two_rows_list">
+					<li>
+						<span class="tr_title"><span class="figures">36</span></span>
+						<span class="tr_subtitle">Short Haul</span>
+					</li>
+					<li>
+						<span class="tr_title"><span class="figures">28</span></span>
+						<span class="tr_subtitle">Longhaul</span>
+					</li>
+				</ul>
+				<ul class="two_rows_list">
+					<li>
+						<span class="tr_title"><i class="icon icon_schedule"></i></span>
+						<span class="tr_subtitle">Availability History</span>
+					</li>
+				</ul>
+				<ul class="two_rows_list trucks_list">
+					<li>
+						<span class="tr_title"><span class="figures">20</span></span>
+						<span class="tr_subtitle"><i class="icon_trucks icon_t_reefer green"></i></span>
+					</li>
+					<li>
+						<span class="tr_title"><span class="figures">31</span></span>
+						<span class="tr_subtitle"><i class="icon_trucks icon_t_flatbed orange"></i></span>
+					</li>
+					<li>
+						<span class="tr_title"><span class="figures">13</span></span>
+						<span class="tr_subtitle"><i class="icon_trucks icon_t_dry_van blue"></i></span>
+					</li>
+				</ul>
+			</div>
+		</section>		
+	</header>
+	<div class="main_content cf">
+			<a class="sidebar_menu_toggle"></a>
+		<aside class="sidebar_left">
+		<div class="sidebar_truck_search accordion_block">
+			<h4 class="accordion_toggle sidebar_title">Advanced Search</h4>
+			<div class="accordion_item_wrapper sidebar_left_container">
+				<div class="accordion_item">
+					<div class="sidebar_body">
+						<button class="btn btn_dark_gray">Search</button>
+						<div class="sidebar_block">
+							<h4 class="seppline show"><i></i><span class="text">Locations</span></h4>
+							<div class="radio_container">
+								<label for="" class="btn_light_gray gray">Locations</label>
+								<label for="" class="btn_light_gray gray">Detail</label>
+							</div>
+							<input type="text">
+						</div>
+						<div class="sidebar_block">
+							<h4 class="seppline show"><i></i><span class="text">Time Range</span></h4>
+						</div>
+						<div class="sidebar_blo showck">
+							<h4 class="seppline show"><i></i><span class="text">References</span></h4>
+							<div class="radio_container">
+								<label for="" class="btn_light_gray gray">Type</label>
+								<label for="" class="btn_light_gray gray">Value</label>
+							</div>
+							<input type="text">
+						</div>
+						<div class="sidebar_block">
+							<h4 class="seppline show"><i></i><span class="text">Status</span></h4>
+							<div class="checkboxes_block">
+								<label for=""><input type="checkbox">New</label>
+								<label for=""><input type="checkbox">Pending</label>
+								<label for=""><input type="checkbox">Sheduled</label>
+							</div>
+						</div>
+						<div class="sidebar_block">
+							<h4 class="seppline show"><i></i><span class="text">Business partner selector</span></h4>
+							<div class="radio_container">
+								<label for="" class="btn_light_gray gray">Busin. partner</label>
+								<label for="" class="btn_light_gray gray">Details</label>
+							</div>
+							<input type="text">
+						</div>
+						<div class="sidebar_block">
+							<h4 class="seppline show"><i></i><span class="text">Routing Specialist</span></h4>
+								<input type="text" placeholder="Name">
+						</div>
+						<div class="sidebar_block">
+							<h4 class="seppline show"><i></i><span class="text">Weight Range</span></h4>
+						</div>
+						<div class="sidebar_block">
+							<h4 class="seppline show"><i></i><span class="text">Flag Search</span></h4>
+							<div class="checkboxes_block">
+								<label for=""><input type="checkbox">Overweight</label>
+								<label for=""><input type="checkbox">Expedit</label>
+								<label for=""><input type="checkbox">Oversize</label>
+								<label for=""><input type="checkbox">Hazmat</label>
+							</div>
+						</div>
+						<div class="sidebar_block">
+							<h4 class="seppline"><i></i><span class="text">Tags</span></h4>
+								<input type="text" placeholder="Start typing tags">
+						</div>
+						<button class="btn btn_dark_gray">Search</button>
+					</div>
+					<footer class="sidebar_footer">
+						<p>Select Layout</p>
+						<select name="" id="">
+							<option value="">Current</option>
+							<option value="">Current</option>
+						</select>
+						<p>Save Curent Search As</p>
+						<div class="two_inputs">
+							<input type="text">
+							<button class="btn btn_light_gray">Save</button>
+						</div>
+					</footer>
+				</div>
+			</div>
+			<h4 class="accordion_toggle sidebar_title">Previous Searches</h4>
+			<div class="accordion_item_wrapper sidebar_left_container">
+			</div>
+			<h4 class="accordion_toggle sidebar_title">Saved Searches</h4>
+			<div class="accordion_item_wrapper sidebar_left_container">
+			</div>
+		</div>
+		</aside>
+		<section class="content_container">
+			<div class="draw_search_container">
+				<button class="btn btn_light_gray btn_pencil">Draw your search</button>
+				<label><input type="checkbox">Update my search when map is moved</label>
+			</div>
+			<img src="images/map_track_search.jpg" alt="" width="100%" height="auto">
+			</section>
+		</section>
+		<aside class="sidebar_right extension_bar">
+			<a class="icon icon_drag drag_sidebar" href="javascript:void(0);"></a>
+			<h4 class="sidebar_title">Trucks</h4>
+			<div class="sidebar_body">
+				<div class="sidebar_container">
+					<div class="sidebar_block accordion_block">
+						<header class="sidebar_block_header">
+							<h4><span class="quantity">45</span><span class="company_name">JB Trucking Company</span></h4>
+							<a class="icon sidebar_block_toggle icon_small_arrow accordion_toggle" href="javascript:void(0);"></a>
+						</header>
+						<section class="sidebar_block_body accordion_item">
+							<table class="trucks_list">
+								<tr class="active">
+									<td><input type="checkbox" checked></td>
+									<td><i class="icon_trucks icon_t_dry_van"></i></td>
+									<td><p>Dry Van</p></td>
+									<td><p>20</p></td>
+								</tr>
+								<tr class="active">
+									<td><input type="checkbox" checked></td>
+									<td><i class="icon_trucks icon_t_flatbed"></i></td>
+									<td><p>Flatbed</p></td>
+									<td><p>15</p></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="icon_trucks icon_t_reefer"></i></td>
+									<td><p>Reefer</p></td>
+									<td><p>10</p></td>
+								</tr>
+							</table>
+						</section>
+						<footer class="sidebar_block_footer">
+							<ul class="sidebar_block_nav">
+								<li><a class="icon icon_dollar" href=""></a></li>
+								<li><a class="icon icon_star" href=""></a></li>
+								<li><a class="icon icon_eye" href=""></a></li>
+							</ul>
+						</footer>
+					</div>
+					<div class="sidebar_block accordion_block">
+						<header class="sidebar_block_header">
+							<h4><span class="quantity">23</span><span class="company_name">Arizona-Dream Tr.</span></h4>
+							<a class="icon sidebar_block_toggle icon_small_arrow accordion_toggle" href="javascript:void(0);"></a>
+						</header>
+						<section class="sidebar_block_body accordion_item">
+							<table class="trucks_list">
+								<tr class="active">
+									<td><input type="checkbox" checked></td>
+									<td><i class="icon_trucks icon_t_dry_van"></i></td>
+									<td><p>Dry Van</p></td>
+									<td><p>5</p></td>
+								</tr>
+								<tr class="active">
+									<td><input type="checkbox" checked></td>
+									<td><i class="icon_trucks icon_t_flatbed"></i></td>
+									<td><p>Flatbed</p></td>
+									<td><p>15</p></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><i class="icon_trucks icon_t_reefer"></i></td>
+									<td><p>Reefer</p></td>
+									<td><p>3</p></td>
+								</tr>
+							</table>
+						</section>
+						<footer class="sidebar_block_footer">
+							<ul class="sidebar_block_nav">
+								<li><a class="icon icon_dollar" href=""></a></li>
+								<li><a class="icon icon_star" href=""></a></li>
+								<li><a class="icon icon_crossed_eye" href=""></a></li>
+							</ul>
+						</footer>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</div>
+
+
+	<footer class="cf site_footer">
+		<div class="footer_menu left">
+			<ul class="footer_menu_items">
+				<li><a href="javascript:void(0);">English (US)</a></li>
+				<li><a href="javascript:void(0);">Deutsch</a></li>
+				<li><a href="javascript:void(0);">Francais</a></li>
+			</ul>			
+		</div>
+		<div class="footer_menu right main_footer_menu">
+			<ul class="footer_menu_items">
+				<li><a href="javascript:void(0);">Terms and Conditions</a></li>
+				<li><a href="javascript:void(0);">Help</a></li>
+				<li>Realine 2014</li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

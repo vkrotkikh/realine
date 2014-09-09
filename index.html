@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+
+	<script type='text/javascript' src='js/jquery.min.js'></script>
+	<script type='text/javascript' src='js/less-1.7.4.min.js'></script>
+	<script type='text/javascript' src='js/main.js'></script>
+
+	<title>Realine</title>
+</head>
+<body class="aside_menu">
+	<header class="site_header fixed">
+		<section class="first_row">
+			<div class="h_user_modules">
+				<div class="modules_container">
+					<ul class="modules_list">
+						<li class="block_notification"><a class="icon ico_notifications" href="javascript:void(0);"><span>2</span></a>
+							<div class="notifications_container">
+								<h4>Notifications</h4>
+								<ul>
+									<li class="cf">
+										<i class="icon ico_close black notification_remove"></i>
+										<img class="notification_img" src="images/avatar24x24.1.jpg">
+										<div class="notification_body">
+											<span class="notification_text">Sounds great, I’ll add a request in Realine. Thanks.</span>
+											<span class="notification_time">2 minut ago</span>
+										</div>
+									</li>
+									<li class="cf">
+										<i class="icon ico_close black notification_remove"></i>
+										<img class="notification_img" src="images/avatar24x24.1.jpg">
+										<div class="notification_body">
+											<span class="notification_text">Sounds great, I’ll add a request in Realine. Thanks.</span>
+											<span class="notification_time">2 minut ago</span>
+										</div>
+									</li>
+								</ul>
+								<a class="notifications_all">Show all</a>
+							</div>
+						</li>
+						<li class="extension_link">
+							<a class="icon ico_messages" href="javascript:void(0);"><span>3</span></a>
+							<div class="hint">2 notifications</div>
+						</li>
+						<li class="extension_link"><a class="icon ico_contact" href="javascript:void(0);"></a></li>
+					</ul>
+				</div>
+				<a class="user_container cf">
+					<span class="user_picture">
+						<img src="images/avatar40x40.1.jpg">
+					</span>
+					<span class="user_info">
+						<span class="user_name" href="javascript:void(0);">Lucas Kafarski</span>
+						<span class="user_company">Realine</span>
+					</span>
+				</a>
+			</div>
+			<div class="h_logo_search">
+				<a href="/" class="header_logo">
+					<img src="images/user-company-logo.png" alt="" width="85" height="32">
+				</a>
+				<div class="search_container">
+					<input class="search_input" type="text" placeholder="Request id, origin or destionation">
+					<button></button>
+				</div>
+			</div>
+		</section>
+		<section class="second_row">
+			<div class="submenu_extensions">
+				<ul class="extensions_list">
+					<li class="extension_link"><a class="icon ico_news" href="javascript:void(0);"></a></li>
+					<li class="extension_link"><a class="icon ico_filter" href="javascript:void(0);"></a></li>
+					<li class="extension_link"><a class="icon ico_stats" href="javascript:void(0);"></a></li>
+					<li class="extension_link"><a class="icon ico_settings" href="javascript:void(0);"></a></li>
+				</ul>				
+			</div>
+			<div class="sumbenu_dashboard_nav">
+				<div class="sumbenu_dashboard">
+					<button class="btn btn_red btn_dasboard">Shipping</button>
+				</div>
+				<div class="submenu_nav">
+					<ul>
+						<li><button class="btn btn_dark_gray btn_add">Add</button></li>
+						<li><button class="btn btn_light_gray btn_repeat">Repeat</button></li>
+						<li><button class="btn btn_light_gray">Confirm receipt</button></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</header>
+	<div class="main_content cf">
+			<a class="sidebar_menu_toggle"></a>
+		<aside class="sidebar_left">
+			<ul class="sidebar_menu_list">
+				<li><a href="javascript:void(0);">All<span>45</span></a></li>
+				<li class="active parent"><a href="javascript:void(0);">Starred<span>61</span></a>
+					<ul>
+						<li><a href="javascript:void(0);">Bulky cargo<span>22</span></a></li>
+						<li class="active current"><a href="javascript:void(0);">New<span>0</span></a></li>
+						<li class="action add_tag"><a href="javascript:void(0);">Add tag</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:void(0);">New<span>35</span></a></li>
+				<li><a href="javascript:void(0);">Pending<span>1</span></a></li>
+				<li><a href="javascript:void(0);">In transit<span>48</span></a></li>
+				<li class="item_sepparator favourite"><a href="javascript:void(0);">Favorites<span>2</span></a></li>
+
+			</ul>
+		</aside>
+		<section class="content_container">
+			<div class="grid slickgrid_211063 ui-widget slickgrid_996606" style="overflow: hidden; outline: 0px; position: relative;">
+				<div tabindex="0" hidefocus="" style="position:fixed;width:0;height:0;top:0;left:0;outline:0;"></div>
+				<div class="slick-header ui-state-default" style="overflow:hidden;position:relative;">
+					<div class="slick-header-columns" style="left: -1000px; width: 2200px;" unselectable="on">
+						<div class="ui-state-default slick-header-column" id="slickgrid_996606s-toggler" title="" style="width: 10px;">
+							<span class="slick-column-name">
+								<label for="all-items" class="th-wrapper">
+									<input type="checkbox" id="all-items">
+								</label>
+							</span>
+						</div>
+						<div class="ui-state-default slick-header-column" id="slickgrid_996606request" title="" style="width: 140px;">
+							<span class="slick-column-name">Request</span>
+						</div>
+						<div class="ui-state-default slick-header-column" id="slickgrid_996606origin" title="" style="width: 230px;">
+							<span class="slick-column-name">Origin</span>
+						</div>
+						<div class="ui-state-default slick-header-column" id="slickgrid_996606destination" title="" style="width: 230px;">
+							<span class="slick-column-name">Destionation</span>
+						</div>
+						<div class="ui-state-default slick-header-column" id="slickgrid_996606requestor" title="" style="width: 70px;">
+							<span class="slick-column-name">Requestor</span>
+						</div>
+						<div class="ui-state-default slick-header-column" id="slickgrid_996606package" title="" style="width: 110px;">
+							<span class="slick-column-name">Package</span>
+						</div>
+						<div class="ui-state-default slick-header-column" id="slickgrid_996606status" title="" style="width: 90px;">
+							<span class="slick-column-name">Status</span>
+						</div>
+						<div class="ui-state-default slick-header-column" id="slickgrid_996606messages" title="" style="width: 70px;">
+							<span class="slick-column-name">Messages</span>
+						</div>
+					</div>
+				</div>
+				<div class="slick-headerrow ui-state-default" style="overflow: hidden; position: relative; display: none;">
+					<div class="slick-headerrow-columns" style="width: 1059px;"></div>
+					<div style="display: block; height: 1px; position: absolute; top: 0px; left: 0px; width: 1059px;"></div>
+				</div>
+				<div class="slick-top-panel-scroller ui-state-default" style="overflow: hidden; position: relative; display: none;">
+					<div class="slick-top-panel" style="width:10000px"></div>
+				</div>
+				<div class="slick-viewport" style="width: 100%; overflow-y: hidden; overflow-x: auto; outline: 0px; position: relative;">
+					<div class="grid-canvas" style="width: 1116px; height: 700px;">
+						<div class="ui-widget-content slick-row even" style="top:0px">
+							<div class="slick-cell l0 r0">
+								<input type="checkbox" name="request[gklkl78]" id="request-gklkl78">
+							</div>
+							<div class="slick-cell l1 r1 w-favorite">
+							<a href="request.favorite.html" class="add-to-favorite"><i class="icon icon-favorite"></i></a>
+								<h4><a href="request.item.html">GKLKL78</a>
+								</h4>
+								<div class="createdon">
+									<time datetime="2014-06-12 11:00">12 june, 11:00</time>
+								</div>
+							</div>
+							<div class="slick-cell l2 r2">
+								<h4>SLC</h4>
+								<address>12/14 Grzybowska, Warszawa, Poland,
+									<span class="nowrap">00132<a href="map.html" class="on-map"><i class="icon icon-location-small"></i></a>
+									</span>
+								</address>
+								<div class="time-range">
+									<time class="nowrap" datetime="2014-06-12 11:00">12&nbsp;june, 11:00</time>&nbsp;—
+									<time class="nowrap" datetime="2014-06-12 12:30">12:30 am</time>
+								</div>
+							</div>
+							<div class="slick-cell l3 r3">
+								<h4>LLC Good Design</h4>
+								<address>Office A206, 76 2-nd Volodarskogo, Moscow, Russia, 
+									<span class="nowrap">346400<a href="map.html" class="on-map"><i class="icon icon-location-small"></i></a>
+									</span>
+								</address>
+								<div class="time-range">
+									<time class="nowrap" datetime="2014-06-12 11:00">12&nbsp;june, 11:00</time>&nbsp;—
+									<time class="nowrap" datetime="2014-06-12 12:30">12:30 am</time>
+								</div>
+							</div>
+							<div class="slick-cell l4 r4">
+								<h4>Microsoft</h4>
+							</div>
+							<div class="slick-cell l5 r5">
+								<span class="custom-hint package-info nowrap" title="">12,800 kg</span>
+								<span class="custom-hint package-info nowrap" title="">3.7 m³</span>
+								<div class="desc">Gasoline</div>
+
+								<div class="features">
+									<i class="custom-hint icon icon-package-danger" title=""></i>
+									<!-- <i class="custom-hint icon icon-package-support" title="Сargo support"></i>
+									<i class="custom-hint icon icon-package-oversize" title="Oversize"></i>
+									<i class="custom-hint icon icon-package-overweight" title="Overweight"></i> -->
+								</div>
+							</div>
+							<div class="slick-cell l6 r6">
+								<span class="normal-priority custom-hint" title="">Pending</span>
+							</div>
+							<div class="slick-cell l7 r7"><a class="messages" href="request.messages.html">0</a></div>
+						</div>
+						<div class="ui-widget-content slick-row odd" style="top:115px">
+							<div class="slick-cell l0 r0">
+								<input type="checkbox" name="request[gklkl78]" id="request-gklkl78">
+							</div>
+							<div class="slick-cell l1 r1 w-favorite">
+							<a href="request.favorite.html" class="add-to-favorite"><i class="icon icon-favorite-a"></i></a>
+								<h4><a href="request.item.html">GKLKL78</a>
+								</h4>
+								<div class="createdon">
+									<time datetime="2014-06-12 11:00">12 june, 11:00</time>
+								</div>
+							</div>
+							<div class="slick-cell l2 r2">
+								<h4>SLC</h4>
+								<address>12/14 Grzybowska, Warszawa, Poland,
+									<span class="nowrap">00132<a href="map.html" class="on-map"><i class="icon icon-location-small"></i></a>
+									</span>
+								</address>
+								<div class="time-range">
+									<time class="nowrap" datetime="2014-06-23">23</time>&nbsp;— <time class="nowrap" datetime="2014-06-24">24 june</time>
+								</div>
+							</div>
+							<div class="slick-cell l3 r3">
+								<h4>Microsoft</h4>
+								<address>Office A206, 76 2-nd Volodarskogo, Moscow, Russia, 
+									<span class="nowrap">346400<a href="map.html" class="on-map"><i class="icon icon-location-small"></i></a>
+									</span>
+								</address>
+								<div class="time-range">
+									<time class="nowrap" datetime="2014-08-31 11:00">31 august</time>&nbsp;— <time class="nowrap" datetime="2014-09-02">2 september</time>
+								</div>
+							</div>
+							<div class="slick-cell l4 r4">
+								<h4>Google</h4>
+							</div>
+							<div class="slick-cell l5 r5">
+								<span class="custom-hint package-info nowrap" title="">53 kg</span>
+								<span class="custom-hint package-info nowrap" title="">0.1 m³</span>
+								<div class="desc">Laptops and tablets</div>
+
+								<div class="features">
+									<i class="custom-hint icon icon-package-support" title=""></i>
+									<i class="custom-hint icon icon-package-oversize" title=""></i>
+									<i class="custom-hint icon icon-package-overweight" title=""></i>
+								</div>
+							</div>
+							<div class="slick-cell l6 r6">
+								<span class="normal-priority custom-hint" title="">Scheduled</span>
+								<div class="tags">
+									<i class="icon icon-tags-small"></i>
+									<ul>
+										<li><a href="request.tags.html">Bulky cargo</a></li>
+										<li><a href="request.tags.html">New</a></li>
+										<li><a href="request.tags.html">Important</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="slick-cell l7 r7"><a class="messages" href="request.messages.html">5 <span class="new custom-hint" title="">+2</span></a></div>
+						</div>
+
+						<div class="ui-widget-content slick-row odd" style="top:230px">
+							<div class="slick-cell l0 r0">
+								<input type="checkbox" name="request[mnbpl22]" id="request-mnbpl22">
+							</div>
+							<div class="slick-cell l1 r1 w-favorite">
+							<a href="request.favorite.html" class="add-to-favorite"><i class="icon icon-favorite"></i></a>
+								<h4><a href="request.item.html">MNBPL22</a>
+								</h4>
+								<div class="createdon">
+									<time datetime="2014-06-12 11:00">1 miunte ago</time>
+								</div>
+							</div>
+							<div class="slick-cell l2 r2">
+								<h4>SLC</h4>
+								<address>604 Fairview Ave, Ridgewood, New York, USA,
+									<span class="nowrap">11385<a href="map.html" class="on-map"><i class="icon icon-location-small"></i></a>
+									</span>
+								</address>
+								<div class="time-range">
+									<time class="nowrap" datetime="2014-06-23">23</time>&nbsp;— <time class="nowrap" datetime="2014-06-24">24 june</time>
+								</div>
+							</div>
+							<div class="slick-cell l3 r3">
+								<h4>LLC Realine</h4>
+								<address>12/14 Grzybowska, Warszawa, Poland,
+									<span class="nowrap">00132<a href="map.html" class="on-map"><i class="icon icon-location-small"></i></a>
+									</span>
+								</address>
+								<div class="time-range">
+									<time class="nowrap" datetime="2014-08-31 11:00">31 august</time>&nbsp;— <time class="nowrap" datetime="2014-09-02">2 september</time>
+								</div>
+							</div>
+							<div class="slick-cell l4 r4">
+								<h4>Realine</h4>
+							</div>
+							<div class="slick-cell l5 r5">
+								<span class="custom-hint package-info nowrap" title="">84 kg</span>
+								<span class="custom-hint package-info nowrap" title="">0.3 m³</span>
+								<div class="desc"></div>
+
+								<div class="features">
+									<i class="custom-hint icon icon-package-support" title=""></i>
+								</div>
+							</div>
+							<div class="slick-cell l6 r6">
+								<span class="high-priority custom-hint" title="">Scheduled</span>
+								<div class="tags">
+									<i class="icon icon-tags-small"></i>
+									<ul>
+										<li><a href="request.tags.html">Bulky cargo</a></li>
+										<li><a href="request.tags.html">Important</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="slick-cell l7 r7"><a class="messages" href="request.messages.html">2</a></div>
+						</div>
+
+						<div class="ui-widget-content slick-row even" style="top:345px">
+							<div class="slick-cell l0 r0">
+								<input type="checkbox" name="request[gklkl78]" id="request-gklkl78">
+							</div>
+							<div class="slick-cell l1 r1 w-favorite">
+							<a href="request.favorite.html" class="add-to-favorite"><i class="icon icon-favorite"></i></a>
+								<h4><a href="request.item.html">GKLKL78</a>
+								</h4>
+								<div class="createdon">
+									<time datetime="2014-06-12 11:00">12 june, 11:00</time>
+								</div>
+							</div>
+							<div class="slick-cell l2 r2">
+								<h4>SLC</h4>
+								<address>12/14 Grzybowska, Warszawa, Poland,
+									<span class="nowrap">00132<a href="map.html" class="on-map"><i class="icon icon-location-small"></i></a>
+									</span>
+								</address>
+								<div class="time-range">
+									<time class="nowrap" datetime="2014-06-12 11:00">12&nbsp;june, 11:00</time>&nbsp;—
+									<time class="nowrap" datetime="2014-06-12 12:30">12:30 am</time>
+								</div>
+							</div>
+							<div class="slick-cell l3 r3">
+								<h4>LLC Good Design</h4>
+								<address>Office A206, 76 2-nd Volodarskogo, Moscow, Russia, 
+									<span class="nowrap">346400<a href="map.html" class="on-map"><i class="icon icon-location-small"></i></a>
+									</span>
+								</address>
+								<div class="time-range">
+									<time class="nowrap" datetime="2014-06-12 11:00">12&nbsp;june, 11:00</time>&nbsp;—
+									<time class="nowrap" datetime="2014-06-12 12:30">12:30 am</time>
+								</div>
+							</div>
+							<div class="slick-cell l4 r4">
+								<h4>Microsoft</h4>
+							</div>
+							<div class="slick-cell l5 r5">
+								<span class="custom-hint package-info nowrap" title="">12,800 kg</span>
+								<span class="custom-hint package-info nowrap" title="">3.7 m³</span>
+								<div class="desc">Gasoline</div>
+
+								<div class="features">
+									<i class="custom-hint icon icon-package-danger" title=""></i>
+									<!-- <i class="custom-hint icon icon-package-support" title="Сargo support"></i>
+									<i class="custom-hint icon icon-package-oversize" title="Oversize"></i>
+									<i class="custom-hint icon icon-package-overweight" title="Overweight"></i> -->
+								</div>
+							</div>
+							<div class="slick-cell l6 r6">
+								<span class="low-priority custom-hint" title="">Pending</span>
+							</div>
+							<div class="slick-cell l7 r7"><a class="messages" href="request.messages.html">0</a></div>
+						</div>
+					</div>
+				</div>
+				<div tabindex="0" hidefocus="" style="position:fixed;width:0;height:0;top:0;left:0;outline:0;"></div>
+			</div>
+		</section>
+		<aside class="sidebar_right extension_bar">
+			<a class="icon icon_drag drag_sidebar" href="javascript:void(0);"></a>
+			<div class="sidebar_body">Blank extension</div>
+		</aside>
+	</div>
+	<div class="popup_container chat_container">
+		<header>
+		<ul class="popup_navigation">
+			<li><a class="icon chat_settings ico_settings_small" href="javascript:void(0);"></a></li>
+			<li><a class="icon chat_close ico_close white" href="javascript:void(0);"></a></li>
+		</ul>
+		<span class="popup_title">Steve Jobs</span>
+		</header>
+		<section class="chat_body_container">
+			<div class="chat_body">
+				<div class="message_in cf">
+					<img class="user_piture" src="images/avatar24x24.6.jpg">
+					<div class="message_body">
+						<span class="text_message">Let me khow. See you.</span>
+						<span class="time_mesage">3 minut ago</span>
+					</div>
+				</div>
+				<div class="message_out cf">
+					<img class="user_piture" src="images/avatar24x24.1.jpg">
+					<div class="message_body">
+						<span class="text_message">Sounds great, I’ll add a request in Realine. Thanks.</span>
+						<span class="time_mesage">2 minut ago</span>
+					</div>
+				</div>
+				<div class="message_in cf">
+					<img class="user_piture" src="images/avatar24x24.6.jpg">
+					<div class="message_body">
+						<span class="text_message">Let me khow. See you.</span>
+						<span class="time_mesage">3 minut ago</span>
+					</div>
+				</div>
+				<div class="message_out cf">
+					<img class="user_piture" src="images/avatar24x24.1.jpg">
+					<div class="message_body">
+						<span class="text_message">Sounds great, I’ll add a request in Realine. Thanks.</span>
+						<span class="time_mesage">2 minut ago</span>
+					</div>
+				</div>
+				<div class="message_in cf">
+					<img class="user_piture" src="images/avatar24x24.6.jpg">
+					<div class="message_body">
+						<span class="text_message">Let me khow. See you.</span>
+						<span class="time_mesage">3 minut ago</span>
+					</div>
+				</div>
+				<div class="message_out cf">
+					<img class="user_piture" src="images/avatar24x24.1.jpg">
+					<div class="message_body">
+						<span class="text_message">Sounds great, I’ll add a request in Realine. Thanks.</span>
+						<span class="time_mesage">2 minut ago</span>
+					</div>
+				</div>
+				<div class="message_in cf">
+					<img class="user_piture" src="images/avatar24x24.6.jpg">
+					<div class="message_body">
+						<span class="text_message">Let me khow. See you.</span>
+						<span class="time_mesage">3 minut ago</span>
+					</div>
+				</div>
+				<div class="message_out cf">
+					<img class="user_piture" src="images/avatar24x24.1.jpg">
+					<div class="message_body">
+						<span class="text_message">Sounds great, I’ll add a request in Realine. Thanks.</span>
+						<span class="time_mesage">2 minut ago</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="chat_form">
+			<div class="attach_file">
+				<input type="file">
+			</div>
+			<input class="message_field" type="text" placeholder="Enter message">
+		</div>
+	</div>
+	<footer class="cf site_footer">
+		<div class="footer_menu">
+			<ul class="footer_menu_items">
+				<li><a href="javascript:void(0);">About</a></li>
+				<li><a href="javascript:void(0);">Help</a></li>
+				<li><a href="javascript:void(0);">Support</a></li>
+				<li><a href="javascript:void(0);">Terms of use</a></li>
+			</ul>
+		</div>
+		<div class="copyrights">© Realine, 2014</div>
+	</footer>
+</body>
+</html>

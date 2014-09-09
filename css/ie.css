@@ -1,0 +1,6 @@
+.notification-list {
+  border: 1px solid #ccc;
+  border-width: 0;
+  *border-width: 1px;
+  border-width: 1px\0/;
+}

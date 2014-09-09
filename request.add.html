@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="realineApp">
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="/css/ie.css">
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+	
+	<script src="/js/jquery.event.drag-2.2.js"></script>
+	<script src="/js/ui-bootstrap-0.11.0.min.js"></script>
+	<script src="/js/slick.core.js"></script>
+	<script src="/js/slick.grid.js"></script>
+	<script src="/js/main.js"></script>
+
+	<title>Realine</title>
+</head>
+<body>
+	<header class="main">
+		<section class="t-header">
+			<div class="logo">
+				<div class="user-brand">
+					<a href="index.html"><img src="i/user-company-logo.png" alt="" width="85" height="32"></a>
+				</div>
+			</div>
+			<dl class="user">
+				<dt><a href="profile.html"><!-- link to setting page for users without JS -->
+					<span class="avatar"><img src="/i/avatar40x40.1.jpg" alt=""></span>
+					<span class="user-name">
+						Lucas Kafarski
+						<span class="user-company">Realine</span>
+					</span>
+					<i class="icon icon-st"></i>
+				</a></dt>
+				<dd><!-- user nav here --></dd>
+			</dl>
+			<nav class="modules">
+				<dl class="dd-list">
+					<dt><a href="notfications.html" class="custom-hint" title="2 new notifications"><!-- link for users without js -->
+						<i class="icon icon-b icon-notifications"></i>
+						<span class="new-counter">2</span><!-- for 10 and more change text to "+" -->
+					</a></dt>
+					<dd>
+						<div class="notification-list">
+							<div class="wr">
+								<h4>Notifications</h4>
+								<div class="item"><a href="people.html">
+									<span class="avatar"><img src="/i/avatar24x24.1.jpg" alt=""></span>
+									<span class="title">Mark Zuckerberg has added you in contact list</span>
+									<time datetime="2014-06-12 12:30">1 minute ago</time>
+									<span class="remove" title="Hide">×</span>
+								</a></div>
+								<div class="item"><a href="people.html">
+									<span class="avatar"><img src="/i/avatar24x24.1.jpg" alt=""></span>
+									<span class="title">Tim Cook has added you in contact list</span>
+									<time datetime="2014-06-12 12:30">12 june, 3:40 am</time>
+									<span class="remove" title="Hide">×</span>
+								</a></div>
+								<div class="item"><a href="messages.html">
+									<span class="title">New message in request <strong>GKPTY61</strong></span>
+									<time datetime="2014-06-12 12:30">2:34 pm</time>
+									<span class="remove" title="Hide">×</span>
+								</a></div>
+							</div>
+							<div class="show-all">
+								<a href="notifications.html">Show all</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="show-extension" data-content="/extensions/messages.html">
+					<dt><a href="messages.html" class="custom-hint" title="2 new messages">
+						<i class="icon icon-b icon-messages"></i>
+						<span class="new-counter">3</span><!-- remove this line if count is 0 -->
+					</a></dt>
+				</dl>
+				<dl class="show-extension" data-content="/extensions/blank.html">
+					<dt><a href="contact-list.html" class="custom-hint" title="Contact list">
+						<i class="icon icon-b icon-contact-list"></i>
+					</a></dt>
+				</dl>
+			</nav>
+			<div class="search">
+				<form action="" method="get">
+					<div class="h-search-wrapper">
+						<input type="text" class="text" name="q" id="search-input" value="" placeholder="Request id, origin or destionation"><!-- Variable search for different applications -->
+						<button type="submit" title="Search">
+							<i class="icon icon-search-g"></i>
+							<span class="title">Search</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</section>
+		<section class="b-header">
+			<nav class="extensions">
+				<ul>
+					<li><a class="custom-hint show-extension" data-content="/extensions/blank.html" href="request.share.html" title="Share"><i class="icon icon-b icon-share"></i></a></li>
+					<li><a class="custom-hint show-extension" data-content="/extensions/subscribe.html" href="request.subscribe.html" title="Sign up for notifications"><i class="icon icon-b icon-n-subscribe"></i></a></li>
+					<li><a class="custom-hint show-extension" data-content="/extensions/blank.html" href="request.templates.html" title="Template"><i class="icon icon-b icon-templates"></i></a></li>
+				</ul>
+			</nav>
+			<dl class="apps dd-list">
+				<dt><a href="dashboard.html" class="button button-wicon button-r">
+					<i class="icon icon-bt icon-apps-w"></i>
+					<span class="title">Shipping</span>
+					<i class="icon icon-st-w"></i>
+				</a></dt>
+				<dd>
+					<div class="app-list">
+						<div style="width: 600px;height: 250px;"><!-- app list here --></div>
+					</div>
+				</dd>
+			</dl>
+			<section class="action-bar">
+				<a href="index.html" class="button button-wicon"><i class="icon icon-bt icon-back"></i>Back to list</a>
+				<a href="" class="button">Groups</a>
+				<dl class="dd-list button-mr">
+					<dt><a href="" class="button"><span class="title">Actions</span><i class="icon icon-st"></i></a></dt>
+					<dd>
+						<div style="width: 240px;height: 300px;"><!-- app list here --></div>
+					</dd>
+				</dl>
+				<a href="" class="button button-g"><strong>Save</strong></a>
+			</section>
+		</section>
+	</header>
+	<aside class="menu">
+		<div class="wr">
+			<ul>
+				<li><a href="request.all.html"><span class="title">All</span> <span class="counter">45</span></a></li>
+				<li class="sub-active"><!-- "active" for active item. "sub-active" if one of the sub items is active -->
+					<i class="icon icon-menu-open"></i>
+					<a href="request.starred.html"><span class="title">Starred</span> <span class="counter">61</span></a>
+					<ul>
+						<li><a href="request.tags.html"><span class="title">Bulky cargo</span> <span class="counter">22</span></a></li>
+						<li class="active"><a href="request.tags.html"><span class="title">New</span> <span class="counter">0</span></a></li>
+						<li class="add-tag"><a href="request.addtag.html"><i class="icon icon-tags-small"></i><span class="title">Add tag</span></a></li>
+					</ul>
+				</li>
+				<li><a href="request.new.html"><span class="title">New</span> <span class="counter">35</span></a></li>
+				<li><a href="request.pending.html"><span class="title">Pending</span> <span class="counter">1</span></a></li>
+				<li><a href="request.intransit.html"><span class="title">In transit</span> <span class="counter">48</span></a></li>
+			</ul>
+			<ul>
+				<li><a href="request.fav.html"><i class="icon icon-favorite-a"></i><span class="title">Favorites</span> <span class="counter">2</span></a></li>
+			</ul>
+		</div>
+		<span class="toggler"><i class="icon icon-toggler"></i></span>
+	</aside>
+
+	<section class="content">
+		<div class="content-wr request-add-wr">
+			<header class="request-add">
+				<div class="viewing">
+					<span class="avatar"><img src="/i/avatar24x24.2.jpg" alt=""></span>
+					<span class="avatar"><img src="/i/avatar24x24.3.jpg" alt=""></span>	
+				</div>
+
+				<h1>Shipment request GKLKL78</h1>
+			</header>
+			<div class="request-add-more">
+				<div class="status">
+					<i class="icon icon-intransit"></i>In transit
+				</div>
+				<div class="createdon">
+					Created on <time>march 19 at 15:00</time> by <a href="people.html">Chris Dennis</a>
+				</div>
+			</div>
+
+			<section class="tabs">
+				<header>
+					<div class="tab active">GKLKL78</div>
+					<div class="tab add-tab">+ add linked request</div>
+				</header>
+				<div class="tabs-content">
+					<div class="item">
+						<form action="" method="post">
+							<aside>
+								<div class="map">
+									<div class="info">
+										<div class="wr">
+											<figure><figcaption>Estimated time:</figcaption> 22:56 hours</figure>
+											<figure><figcaption>Distance:</figcaption> 350 miles</figure>
+										</div>
+									</div>
+									<div class="map-cnt" data-zoom="7" data-center="-34.397,150.644"></div>
+								</div>
+							</aside>
+							<div class="main-column">
+
+								<!-- start angular templates -->
+								
+								<script type="text/ng-template" id="locationTemplate.html">
+									<a class="location-item">
+										<span class="address" bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+										<span class="more partner">{{match.model.partner}}</span>
+									</a>
+								</script>
+								<script type="text/ng-template" id="refencesTemplate.html">
+									<a class"refences-item">
+										<span class="title" bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+										<span class="more number">{{match.model.number}}</span>
+										<span class="more qty">{{match.model.qty}}</span>
+									</a>
+								</script>
+								<script type="text/ng-template" id="packageTemplate.html">
+									<a class="package-item">
+										<span class="title" bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+										<span class="more description">{{match.model.description}}</span>
+										<span class="more weight">{{match.model.weight}}</span>
+										<span class="more qty">{{match.model.qty}}</span>
+									</a>
+								</script>
+
+								<!-- end angular templates -->
+
+								<div class="group">
+									<dl class="f">
+										<dt><h4><label for="bpartner-gklkl78">Busines partner</label></h4></dt>
+										<dd><span ng-controller="TypeaheadCtrl" class="autocomplete"><input type="text" ng-model="customSelected" id="bpartner-gklkl78" typeahead="partner for partner in partners | filter:$viewValue" class="text text-msize"></span></dd>
+									</dl>
+								</div>
+								<div class="group">
+									<h4>Origin</h4>
+									<dl class="f">
+										<dt><label for="olocation-gklkl78">Location</label></dt>
+										<dd><span class="location-picker" ng-controller="TypeaheadCtrl"><input type="text" ng-model="customSelected" name="olocation" id="olocation-gklkl78" typeahead="location as location.address for location in locations | filter:{address:$viewValue}" typeahead-template-url="locationTemplate.html" class="text text-bsize">
+										<span class="button-toggler"><i class="icon icon-location"></i></span></span></dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="odate-gklkl78">Ready</label></dt>
+										<dd><span class="date-picker" ng-controller="DatepickerCtrl">
+											<input type="text" id="odate-gklkl78" class="text" show-weeks="false" datepicker-popup="{{format}}" ng-model="dt" min-date="minDate" max-date="'2015-06-22'" is-open="opened" datepicker-options="dateOptions">
+											<span class="button-toggler" ng-click="open($event)"><i class="icon icon-calendar"></i></span>
+										</span>
+										<label class="separator" for="otime-gklkl78">at</label> <span class="time-picker"><input type="text" id="otime-gklkl78" class="text text-time">
+										<span class="button-toggler"><i class="icon icon-time"></i></span></span></dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="opwindow-gklkl78">Pickup window</label></dt>
+										<dd><span class="time-picker"><input type="text" id="opwindow-gklkl78" class="text text-timerange">
+										<span class="button-toggler"><i class="icon icon-time"></i></span></span></dd>
+									</dl>
+
+									<h4>Destination</h4>
+									<dl class="f">
+										<dt><label for="dlocation-gklkl78">Location</label></dt>
+										<dd><span class="location-picker" ng-controller="TypeaheadCtrl"><input type="text" ng-model="customSelected" name="dlocation" id="dlocation-gklkl78" typeahead="location as location.address for location in locations | filter:{address:$viewValue}" typeahead-template-url="locationTemplate.html" class="text text-bsize">
+										<span class="button-toggler"><i class="icon icon-location"></i></span></span></dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="ddate-gklkl78">Ready</label></dt>
+										<dd><span class="date-picker" ng-controller="DatepickerCtrl">
+											<input type="text" id="ddate-gklkl78" class="text" show-weeks="false" datepicker-popup="{{format}}" ng-model="dt" min-date="minDate" max-date="'2015-06-22'" is-open="opened" datepicker-options="dateOptions">
+											<span class="button-toggler" ng-click="open($event)"><i class="icon icon-calendar"></i></span>
+										</span>
+										<label class="separator" for="dtime-gklkl78">at</label> <select class="text text-time" name="dtime" id="dtime-gklkl78">
+											<option value=""></option>
+											<option value="0:00 am">00:00 am</option>
+											<option value="0:15 am">00:15 am</option>
+											<option value="0:30 am">00:30 am</option>
+											<option value="0:45 am">00:45 am</option>
+											<option value="1:00 am">01:00 am</option>
+											<option value="1:15 am">01:15 am</option>
+											<option value="1:30 am">01:30 am</option>
+											<option value="1:45 am">01:45 am</option>
+											<option value="2:00 am">02:00 am</option>
+											<option value="2:15 am">02:15 am</option>
+											<option value="2:30 am">02:30 am</option>
+											<option value="2:45 am">02:45 am</option>
+											<option value="3:00 am">03:00 am</option>
+											<option value="3:15 am">03:15 am</option>
+											<option value="3:30 am">03:30 am</option>
+											<option value="3:45 am">03:45 am</option>
+											<option value="4:00 am">04:00 am</option>
+											<option value="4:15 am">04:15 am</option>
+											<option value="4:30 am">04:30 am</option>
+											<option value="4:45 am">04:45 am</option>
+											<option value="5:00 am">05:00 am</option>
+											<option value="5:15 am">05:15 am</option>
+											<option value="5:30 am">05:30 am</option>
+											<option value="5:45 am">05:45 am</option>
+											<option value="6:00 am">06:00 am</option>
+											<option value="6:15 am">06:15 am</option>
+											<option value="6:30 am">06:30 am</option>
+											<option value="6:45 am">06:45 am</option>
+											<option value="7:00 am">07:00 am</option>
+											<option value="7:15 am">07:15 am</option>
+											<option value="7:30 am">07:30 am</option>
+											<option value="7:45 am">07:45 am</option>
+											<option value="8:00 am">08:00 am</option>
+											<option value="8:15 am">08:15 am</option>
+											<option value="8:30 am">08:30 am</option>
+											<option value="8:45 am">08:45 am</option>
+											<option value="9:00 am">09:00 am</option>
+											<option value="9:15 am">09:15 am</option>
+											<option value="9:30 am">09:30 am</option>
+											<option value="9:45 am">09:45 am</option>
+											<option value="10:00 am">10:00 am</option>
+											<option value="10:15 am">10:15 am</option>
+											<option value="10:30 am">10:30 am</option>
+											<option value="10:45 am">10:45 am</option>
+											<option value="11:00 am">11:00 am</option>
+											<option value="11:15 am">11:15 am</option>
+											<option value="11:30 am">11:30 am</option>
+											<option value="11:45 am">11:45 am</option>
+											<option value="0:00 pm">00:00 pm</option>
+											<option value="0:15 pm">00:15 pm</option>
+											<option value="0:30 pm">00:30 pm</option>
+											<option value="0:45 pm">00:45 pm</option>
+											<option value="1:00 pm">01:00 pm</option>
+											<option value="1:15 pm">01:15 pm</option>
+											<option value="1:30 pm">01:30 pm</option>
+											<option value="1:45 pm">01:45 pm</option>
+											<option value="2:00 pm">02:00 pm</option>
+											<option value="2:15 pm">02:15 pm</option>
+											<option value="2:30 pm">02:30 pm</option>
+											<option value="2:45 pm">02:45 pm</option>
+											<option value="3:00 pm">03:00 pm</option>
+											<option value="3:15 pm">03:15 pm</option>
+											<option value="3:30 pm">03:30 pm</option>
+											<option value="3:45 pm">03:45 pm</option>
+											<option value="4:00 pm">04:00 pm</option>
+											<option value="4:15 pm">04:15 pm</option>
+											<option value="4:30 pm">04:30 pm</option>
+											<option value="4:45 pm">04:45 pm</option>
+											<option value="5:00 pm">05:00 pm</option>
+											<option value="5:15 pm">05:15 pm</option>
+											<option value="5:30 pm">05:30 pm</option>
+											<option value="5:45 pm">05:45 pm</option>
+											<option value="6:00 pm">06:00 pm</option>
+											<option value="6:15 pm">06:15 pm</option>
+											<option value="6:30 pm">06:30 pm</option>
+											<option value="6:45 pm">06:45 pm</option>
+											<option value="7:00 pm">07:00 pm</option>
+											<option value="7:15 pm">07:15 pm</option>
+											<option value="7:30 pm">07:30 pm</option>
+											<option value="7:45 pm">07:45 pm</option>
+											<option value="8:00 pm">08:00 pm</option>
+											<option value="8:15 pm">08:15 pm</option>
+											<option value="8:30 pm">08:30 pm</option>
+											<option value="8:45 pm">08:45 pm</option>
+											<option value="9:00 pm">09:00 pm</option>
+											<option value="9:15 pm">09:15 pm</option>
+											<option value="9:30 pm">09:30 pm</option>
+											<option value="9:45 pm">09:45 pm</option>
+											<option value="10:00 pm">10:00 pm</option>
+											<option value="10:15 pm">10:15 pm</option>
+											<option value="10:30 pm">10:30 pm</option>
+											<option value="10:45 pm">10:45 pm</option>
+											<option value="11:00 pm">11:00 pm</option>
+											<option value="11:15 pm">11:15 pm</option>
+											<option value="11:30 pm">11:30 pm</option>
+											<option value="11:45 pm">11:45 pm</option>
+										</select></dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="dpwindow-gklkl78">Pickup window</label></dt>
+										<dd><select class="text text-time" name="dpwindow-from" id="dpwindow-gklkl78">
+											<option value=""></option>
+											<option value="0:00 am">00:00 am</option>
+											<option value="0:15 am">00:15 am</option>
+											<option value="0:30 am">00:30 am</option>
+											<option value="0:45 am">00:45 am</option>
+											<option value="1:00 am">01:00 am</option>
+											<option value="1:15 am">01:15 am</option>
+											<option value="1:30 am">01:30 am</option>
+											<option value="1:45 am">01:45 am</option>
+											<option value="2:00 am">02:00 am</option>
+											<option value="2:15 am">02:15 am</option>
+											<option value="2:30 am">02:30 am</option>
+											<option value="2:45 am">02:45 am</option>
+											<option value="3:00 am">03:00 am</option>
+											<option value="3:15 am">03:15 am</option>
+											<option value="3:30 am">03:30 am</option>
+											<option value="3:45 am">03:45 am</option>
+											<option value="4:00 am">04:00 am</option>
+											<option value="4:15 am">04:15 am</option>
+											<option value="4:30 am">04:30 am</option>
+											<option value="4:45 am">04:45 am</option>
+											<option value="5:00 am">05:00 am</option>
+											<option value="5:15 am">05:15 am</option>
+											<option value="5:30 am">05:30 am</option>
+											<option value="5:45 am">05:45 am</option>
+											<option value="6:00 am">06:00 am</option>
+											<option value="6:15 am">06:15 am</option>
+											<option value="6:30 am">06:30 am</option>
+											<option value="6:45 am">06:45 am</option>
+											<option value="7:00 am">07:00 am</option>
+											<option value="7:15 am">07:15 am</option>
+											<option value="7:30 am">07:30 am</option>
+											<option value="7:45 am">07:45 am</option>
+											<option value="8:00 am">08:00 am</option>
+											<option value="8:15 am">08:15 am</option>
+											<option value="8:30 am">08:30 am</option>
+											<option value="8:45 am">08:45 am</option>
+											<option value="9:00 am">09:00 am</option>
+											<option value="9:15 am">09:15 am</option>
+											<option value="9:30 am">09:30 am</option>
+											<option value="9:45 am">09:45 am</option>
+											<option value="10:00 am">10:00 am</option>
+											<option value="10:15 am">10:15 am</option>
+											<option value="10:30 am">10:30 am</option>
+											<option value="10:45 am">10:45 am</option>
+											<option value="11:00 am">11:00 am</option>
+											<option value="11:15 am">11:15 am</option>
+											<option value="11:30 am">11:30 am</option>
+											<option value="11:45 am">11:45 am</option>
+											<option value="0:00 pm">00:00 pm</option>
+											<option value="0:15 pm">00:15 pm</option>
+											<option value="0:30 pm">00:30 pm</option>
+											<option value="0:45 pm">00:45 pm</option>
+											<option value="1:00 pm">01:00 pm</option>
+											<option value="1:15 pm">01:15 pm</option>
+											<option value="1:30 pm">01:30 pm</option>
+											<option value="1:45 pm">01:45 pm</option>
+											<option value="2:00 pm">02:00 pm</option>
+											<option value="2:15 pm">02:15 pm</option>
+											<option value="2:30 pm">02:30 pm</option>
+											<option value="2:45 pm">02:45 pm</option>
+											<option value="3:00 pm">03:00 pm</option>
+											<option value="3:15 pm">03:15 pm</option>
+											<option value="3:30 pm">03:30 pm</option>
+											<option value="3:45 pm">03:45 pm</option>
+											<option value="4:00 pm">04:00 pm</option>
+											<option value="4:15 pm">04:15 pm</option>
+											<option value="4:30 pm">04:30 pm</option>
+											<option value="4:45 pm">04:45 pm</option>
+											<option value="5:00 pm">05:00 pm</option>
+											<option value="5:15 pm">05:15 pm</option>
+											<option value="5:30 pm">05:30 pm</option>
+											<option value="5:45 pm">05:45 pm</option>
+											<option value="6:00 pm">06:00 pm</option>
+											<option value="6:15 pm">06:15 pm</option>
+											<option value="6:30 pm">06:30 pm</option>
+											<option value="6:45 pm">06:45 pm</option>
+											<option value="7:00 pm">07:00 pm</option>
+											<option value="7:15 pm">07:15 pm</option>
+											<option value="7:30 pm">07:30 pm</option>
+											<option value="7:45 pm">07:45 pm</option>
+											<option value="8:00 pm">08:00 pm</option>
+											<option value="8:15 pm">08:15 pm</option>
+											<option value="8:30 pm">08:30 pm</option>
+											<option value="8:45 pm">08:45 pm</option>
+											<option value="9:00 pm">09:00 pm</option>
+											<option value="9:15 pm">09:15 pm</option>
+											<option value="9:30 pm">09:30 pm</option>
+											<option value="9:45 pm">09:45 pm</option>
+											<option value="10:00 pm">10:00 pm</option>
+											<option value="10:15 pm">10:15 pm</option>
+											<option value="10:30 pm">10:30 pm</option>
+											<option value="10:45 pm">10:45 pm</option>
+											<option value="11:00 pm">11:00 pm</option>
+											<option value="11:15 pm">11:15 pm</option>
+											<option value="11:30 pm">11:30 pm</option>
+											<option value="11:45 pm">11:45 pm</option>
+										</select>
+										<label for="dpwindow-to-gklkl78" class="separator">—</label>
+										<select class="text text-time" name="dpwindow-to" id="dpwindow-to-gklkl78">
+											<option value=""></option>
+											<option value="0:00 am">00:00 am</option>
+											<option value="0:15 am">00:15 am</option>
+											<option value="0:30 am">00:30 am</option>
+											<option value="0:45 am">00:45 am</option>
+											<option value="1:00 am">01:00 am</option>
+											<option value="1:15 am">01:15 am</option>
+											<option value="1:30 am">01:30 am</option>
+											<option value="1:45 am">01:45 am</option>
+											<option value="2:00 am">02:00 am</option>
+											<option value="2:15 am">02:15 am</option>
+											<option value="2:30 am">02:30 am</option>
+											<option value="2:45 am">02:45 am</option>
+											<option value="3:00 am">03:00 am</option>
+											<option value="3:15 am">03:15 am</option>
+											<option value="3:30 am">03:30 am</option>
+											<option value="3:45 am">03:45 am</option>
+											<option value="4:00 am">04:00 am</option>
+											<option value="4:15 am">04:15 am</option>
+											<option value="4:30 am">04:30 am</option>
+											<option value="4:45 am">04:45 am</option>
+											<option value="5:00 am">05:00 am</option>
+											<option value="5:15 am">05:15 am</option>
+											<option value="5:30 am">05:30 am</option>
+											<option value="5:45 am">05:45 am</option>
+											<option value="6:00 am">06:00 am</option>
+											<option value="6:15 am">06:15 am</option>
+											<option value="6:30 am">06:30 am</option>
+											<option value="6:45 am">06:45 am</option>
+											<option value="7:00 am">07:00 am</option>
+											<option value="7:15 am">07:15 am</option>
+											<option value="7:30 am">07:30 am</option>
+											<option value="7:45 am">07:45 am</option>
+											<option value="8:00 am">08:00 am</option>
+											<option value="8:15 am">08:15 am</option>
+											<option value="8:30 am">08:30 am</option>
+											<option value="8:45 am">08:45 am</option>
+											<option value="9:00 am">09:00 am</option>
+											<option value="9:15 am">09:15 am</option>
+											<option value="9:30 am">09:30 am</option>
+											<option value="9:45 am">09:45 am</option>
+											<option value="10:00 am">10:00 am</option>
+											<option value="10:15 am">10:15 am</option>
+											<option value="10:30 am">10:30 am</option>
+											<option value="10:45 am">10:45 am</option>
+											<option value="11:00 am">11:00 am</option>
+											<option value="11:15 am">11:15 am</option>
+											<option value="11:30 am">11:30 am</option>
+											<option value="11:45 am">11:45 am</option>
+											<option value="0:00 pm">00:00 pm</option>
+											<option value="0:15 pm">00:15 pm</option>
+											<option value="0:30 pm">00:30 pm</option>
+											<option value="0:45 pm">00:45 pm</option>
+											<option value="1:00 pm">01:00 pm</option>
+											<option value="1:15 pm">01:15 pm</option>
+											<option value="1:30 pm">01:30 pm</option>
+											<option value="1:45 pm">01:45 pm</option>
+											<option value="2:00 pm">02:00 pm</option>
+											<option value="2:15 pm">02:15 pm</option>
+											<option value="2:30 pm">02:30 pm</option>
+											<option value="2:45 pm">02:45 pm</option>
+											<option value="3:00 pm">03:00 pm</option>
+											<option value="3:15 pm">03:15 pm</option>
+											<option value="3:30 pm">03:30 pm</option>
+											<option value="3:45 pm">03:45 pm</option>
+											<option value="4:00 pm">04:00 pm</option>
+											<option value="4:15 pm">04:15 pm</option>
+											<option value="4:30 pm">04:30 pm</option>
+											<option value="4:45 pm">04:45 pm</option>
+											<option value="5:00 pm">05:00 pm</option>
+											<option value="5:15 pm">05:15 pm</option>
+											<option value="5:30 pm">05:30 pm</option>
+											<option value="5:45 pm">05:45 pm</option>
+											<option value="6:00 pm">06:00 pm</option>
+											<option value="6:15 pm">06:15 pm</option>
+											<option value="6:30 pm">06:30 pm</option>
+											<option value="6:45 pm">06:45 pm</option>
+											<option value="7:00 pm">07:00 pm</option>
+											<option value="7:15 pm">07:15 pm</option>
+											<option value="7:30 pm">07:30 pm</option>
+											<option value="7:45 pm">07:45 pm</option>
+											<option value="8:00 pm">08:00 pm</option>
+											<option value="8:15 pm">08:15 pm</option>
+											<option value="8:30 pm">08:30 pm</option>
+											<option value="8:45 pm">08:45 pm</option>
+											<option value="9:00 pm">09:00 pm</option>
+											<option value="9:15 pm">09:15 pm</option>
+											<option value="9:30 pm">09:30 pm</option>
+											<option value="9:45 pm">09:45 pm</option>
+											<option value="10:00 pm">10:00 pm</option>
+											<option value="10:15 pm">10:15 pm</option>
+											<option value="10:30 pm">10:30 pm</option>
+											<option value="10:45 pm">10:45 pm</option>
+											<option value="11:00 pm">11:00 pm</option>
+											<option value="11:15 pm">11:15 pm</option>
+											<option value="11:30 pm">11:30 pm</option>
+											<option value="11:45 pm">11:45 pm</option>
+										</select></dd>
+									</dl>
+								</div>
+								<div class="group">
+									<dl class="f">
+										<dt><h4><label for="rcenter-gklkl78">Routing center</label></h4></dt>
+										<dd><select class="text text-msize" name="rcenter" id="rcenter-gklkl78">
+											<option value="Routing center 1">Routing center 1</option>
+											<option value="Routing center 2">Routing center 2</option>
+										</select></dd>
+									</dl>
+								</div>
+								<div class="group">
+									<h4>Package</h4>
+									<dl class="f">
+										<dt><label for="pcommodity-gklkl78">Commodity</label></dt>
+										<dd><input type="text" id="pcommodity-gklkl78" class="text text-msize"></dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="pweight-gklkl78">Weight</label></dt>
+										<dd>
+											<span class="data-type"><input type="text" id="pweight-gklkl78" class="text text-ssize text-ar">
+											<label for="pweight-type-gklkl78">
+												<select name="pweight-type" id="pweight-type-gklkl78">
+													<option value="kg" selected>kg</option>
+													<option value="lb">lb</option>
+												</select>
+												<span class="title"></span>
+												<i class="icon icon-st"></i>
+											</label></span>
+										</dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="pvolume-gklkl78">Volume</label></dt>
+										<dd>
+											<span class="data-type"><input type="text" id="pvolume-gklkl78" class="text text-ssize text-ar">
+											<label for="pvolume-type-gklkl78">
+												<select name="pvolume-type" id="pvolume-type-gklkl78">
+													<option value="m³" selected>m³</option>
+													<option value="gal">gal</option>
+												</select>
+												<span class="title"></span>
+												<i class="icon icon-st"></i>
+											</label></span>
+										</dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="ppieces-gklkl78">Pieces</label></dt>
+										<dd><input type="number" min="1" id="ppieces-gklkl78" class="text text-ssize"></dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="pmodetype-gklkl78">Mode type</label></dt>
+										<dd><input type="text" id="pmodetype-gklkl78" class="text text-msize"></dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="pequipment-gklkl78">Equipment</label></dt>
+										<dd><span ng-controller="TypeaheadCtrl" class="autocomplete"><input type="text" ng-model="customSelected" id="pequipment-gklkl78" typeahead="equipment for equipment in equipment | filter:$viewValue" class="text text-bsize"></span></dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="padd-gklkl78">Additionally</label></dt>
+										<dd>
+											<ul class="checkbox-list">
+												<li><label for="p-add-overweight-gklkl78"><input type="checkbox" name="overweight" id="p-add-overweight-gklkl78"> Overweight</label></li>
+												<li><label for="p-add-oversize-gklkl78"><input type="checkbox" name="oversize" id="p-add-oversize-gklkl78"> Oversize</label></li>
+												<li><label for="p-add-expedite-gklkl78"><input type="checkbox" name="expedite" id="p-add-expedite-gklkl78"> Expedite</label></li>
+												<li><label for="p-add-hazmat-gklkl78"><input type="checkbox" name="hazmat" id="p-add-hazmat-gklkl78"> Hazmat</label></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+								<div class="group">
+									<dl class="f">
+										<dt><h4><label for="add-package-part-gklkl78">Package parts</label></h4></dt>
+										<dd><span ng-controller="TypeaheadCtrl" class="autocomplete">
+											<input type="text" ng-model="customSelected" id="add-package-part-gklkl78" placeholder="Number" typeahead="package as package.number for package in package | filter:{number:$viewValue}" typeahead-on-select="selectPackagePart($item, $model, $label)" typeahead-template-url="packageTemplate.html" class="text text-msize">
+											<!-- if need button: <input type="button" value="Add" class="button"> -->
+										</span></dd>
+
+										<dd>
+											<div class="fe-list">
+												<div class="fe-list-item">
+													<input type="text" name="package-parts-number[]" value="1923054521" placeholder="Number" class="text pp-number"><!-- 
+													--><input type="text" name="package-parts-desc[]" value="Engine blower" placeholder="Description" class="text pp-desc"><!-- 
+													--><input type="text" name="package-parts-weight[]" value="37,000" placeholder="Qty" class="text pp-weight"><!-- 
+													--><input type="text" name="package-parts-qty[]" value="1" placeholder="Qty" class="text pp-qty"><!-- 
+													--><span class="remove">×</span>
+												</div>
+												<div class="fe-list-item">
+													<input type="text" name="package-parts-number[]" value="1923054521" placeholder="Number" class="text pp-number"><!-- 
+													--><input type="text" name="package-parts-desc[]" value="Engine blower" placeholder="Description" class="text pp-desc"><!-- 
+													--><input type="text" name="package-parts-weight[]" value="2,000" placeholder="Qty" class="text pp-weight"><!-- 
+													--><input type="text" name="package-parts-qty[]" value="5" placeholder="Qty" class="text pp-qty"><!-- 
+													--><span class="remove">×</span>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<div class="group">
+									<dl class="f">
+										<dt><h4><label for="references-gklkl78">References</label></h4></dt>
+										<dd><span ng-controller="TypeaheadCtrl" class="autocomplete">
+											<input type="text" ng-model="customSelected" id="references-gklkl78" placeholder="Title" typeahead="refences as refences.title for refences in refences | filter:{title:$viewValue}" typeahead-template-url="refencesTemplate.html" class="text text-msize">
+										</span></dd>
+
+										<dd>
+											<div class="fe-list">
+												<div class="fe-list-item">
+													<input type="text" name="references[]" value="Bill of lading" placeholder="Title" class="text re-title"><!-- 
+													--><input type="text" name="references[]" value="BL974879" placeholder="Number" class="text re-number"><!-- 
+													--><input type="text" name="references[]" value="5" placeholder="Qty" class="text re-qty"><!-- 
+													--><span class="remove">×</span>
+												</div>
+												<div class="fe-list-item">
+													<input type="text" name="references[]" value="Approval number" placeholder="Title" class="text re-title"><!-- 
+													--><input type="text" name="references[]" value="BAVT78" placeholder="Number" class="text re-number"><!-- 
+													--><input type="text" name="references[]" value="—" placeholder="Qty" class="text re-qty"><!-- 
+													--><span class="remove">×</span>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<div class="group">
+									<dl class="f">
+										<dt><h4><label for="a-services-gklkl78">Additional services</label></h4></dt>
+										<dd><input type="text" name="a-services" id="a-services-gklkl78" class="text text-tags"></dd>
+									</dl>
+								</div>
+								<div class="group">
+									<dl class="f">
+										<dt><h4>Attachments</h4></dt>
+										<dd><select class="text text-msize" name="attachments" id="attachments-gklkl78">
+											<option value="Add by email">Add by email</option>
+										</select></dd>
+										<dd>
+
+											<ul class="file-list">
+												<li>
+													<i class="icon icon-file"></i> Invoice_12.07.doc <span class="remove">×</span>
+													<input type="hidden" name="files[]" value="some-id">
+												</li>
+												<li>
+													<i class="icon icon-file"></i> Request details.pdf <span class="remove">×</span>
+													<input type="hidden" name="files[]" value="some-id">
+												</li>
+											</ul>
+											<div class="add-attachment">
+												<label for="add-attachments-gklkl78">
+													<input type="button" value="Add files" class="button"> <span class="drop-here">or drop here</span>
+													<input type="file" tabindex="10000" name="files[]" multiple id="add-attachments-gklkl78" class="file">
+												</label>
+											</div>
+										</dd>
+									</dl>
+								</div>
+							</div>
+
+							<aside>
+								<div class="group">
+									<dl class="f">
+										<dt><label for="tags-gklkl78">Tags</label></dt>
+										<dd><input type="text" id="tags-gklkl78" name="tags" class="text text-msize text-tags"></dd>
+									</dl>
+									<dl class="f">
+										<dt>Priority</dt>
+										<dd>
+											<div class="radio-group">
+												<label for="priority-low-gklkl78" class="low-priority"><input type="radio" name="priority" value="low" id="priority-low-gklkl78"> <span class="title">Low</span></label>
+												<label for="priority-normal-gklkl78" class="normal-priority"><input type="radio" name="priority" value="normal" checked id="priority-normal-gklkl78"> <span class="title">Normal</span></label>
+												<label for="priority-high-gklkl78" class="high-priority"><input type="radio" name="priority" value="high" id="priority-high-gklkl78"> <span class="title">High</span></label>
+											</div>
+										</dd>
+									</dl>
+									<dl class="f">
+										<dt><label for="notes-gklkl78">Notes and instructions</label></dt>
+										<dd><textarea name="notes" id="notes-gklkl78" cols="30" rows="6" class="text text-msize"></textarea></dd>
+									</dl>
+								</div>
+							</aside>
+
+							<div class="actions">
+								<div class="save-as-template">
+									<span class="dt-wr"><span class="dt"><span>Save as template</span></span></span>
+								</div>
+								<input type="submit" value="Save request" class="button button-g">
+								<span class="dt-wr"><span class="dt dt-sgray"><span>Reset and back to list</span></span></span>
+							</div>
+						</form>
+					</div>					
+				</div>
+			</section>
+		</div>
+	</section>
+
+	<section class="extension">
+		<div class="extension-wrapper"></div>
+		<div class="dragger"><i class="icon icon-drag"></i></div>
+	</section>
+
+	<footer>
+		<div class="copy">© Realine, 2014</div>
+		<nav>
+			<ul>
+				<li><a href="about.html">About</a></li>
+				<li><a href="help.html">Help</a></li>
+				<li><a href="support.html">Support</a></li>
+				<li><a href="terms.html">Terms of use</a></li>
+			</ul>
+		</nav>
+
+		<section class="chats"></section>
+	</footer>
+</body>
+</html>
