@@ -4,6 +4,11 @@ realineMain = (function($){
 			app.fixedContentSubHedaer();
 			app.clickEvents();
 			app.popup();
+			app.heightScrollBlock();
+
+			$(window).on('resize', function(){
+				app.heightScrollBlock();
+			});
 		},
 		popup: function(){ /* create and show popup */
 			$('.popup_show').on('click', function(){
@@ -128,6 +133,15 @@ realineMain = (function($){
 				}
 
 			});
+		},
+		heightScrollBlock: function(){
+			var header_block = $('header.site_header').outerHeight();
+			var footer_block = $('footer.site_footer').outerHeight();
+			var block_height = $(window).height() - (header_block + footer_block);
+			$('.holder_sidebar_info').css({"height" : block_height});
+			if(!$('.mCustomScrollbar').data('mCS')){
+				$('.mCustomScrollbar').mCustomScrollbar();
+			}
 		}
 	}
 	return app;
@@ -135,5 +149,5 @@ realineMain = (function($){
 
 jQuery(document).ready(function($){
 	realineMain.init();
-})
+});
 
