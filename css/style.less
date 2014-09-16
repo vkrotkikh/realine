@@ -1,4 +1,4 @@
-﻿/*
+﻿﻿/*
 ======================================================
 
 RESET CSS
@@ -161,7 +161,6 @@ ALL VARIABLES
 @lightestGray-sixth:	#787878;
 @lightestGray-seventh:	#8b8b8b;
 @lightestGray-eighth:	#e6e6e6;
-@lightestGray-nineteen:	#d9d9d9;
 
 @red: 					#d9534f;
 @red-second: 			#d53c37;
@@ -178,7 +177,6 @@ ALL VARIABLES
 @normalFontSize: 		13px;
 @smallerFontSize: 		12px;
 @smallestFontSize: 		11px;
-@smallestFontSize-second:10px;
 
 
 /*border radius*/
@@ -377,6 +375,7 @@ h2 {
 	line-height: 30px;
 	font-weight: normal;
 
+	-
 	&.seppline{
 		position: relative;
 		font-size: 14px;
@@ -403,6 +402,7 @@ h2 {
 			padding-right:10px;
 		}
 	}
+
 }
 
 h3 {
@@ -512,6 +512,8 @@ input[type="checkbox"] {
 		max-width: 100%;
 	}
 }
+
+
 /*buttons*/
 
 .btn {
@@ -588,6 +590,7 @@ input[type="checkbox"] {
 		.gradient(@white, @white-second);
 	}
 }
+
 
 /*font block styles*/
 
@@ -714,6 +717,7 @@ input[type="checkbox"] {
 	width: 11px;
 	height: 18px;
 }
+
 
 .attach_files_block {
 
@@ -925,6 +929,7 @@ background-position: -205px -95px;
     }
 }
 
+
 .icon_driver{
 	background-position: -777px -93px;
 	width: 15px;
@@ -954,6 +959,55 @@ background-position: -205px -95px;
 	width: 15px;
 	height: 15px;
 }
+
+.icon_dasnboard {
+	background-position: -543px -50px;
+	width: 15px;
+	height: 15px;
+}
+
+.icon_doc_accepted {
+	background-position: -217px -309px;
+}
+
+.icon_truck_shipment {
+	background-position: -171px -309px;
+}
+
+.icon_doc_money {
+	background-position: -123px -309px;
+}
+
+.icon_doc_auction {
+	background-position: -78px -309px;
+}
+
+.icon_house_ryg {
+	background-position: -41px -309px;
+}
+
+.icon_house_ryg_small {
+	background-position: -34px -360px;
+}
+
+.icon_doc_accepted_small {
+	background-position: -178px -360px;
+}
+
+.icon_doc_auction_small {
+	background-position: -67px -360px;
+}
+
+.icon_doc_money_small {
+	background-position: -101px -360px;
+}
+
+.icon_truck_shipment_small {
+	background-position: -139px -360px;
+}
+
+
+
 /* icon trucks */
 
 .icon_trucks {
@@ -1242,7 +1296,7 @@ HEADER
 .site_header {
 	min-width:@siteMinWidth;
 	width:100%;
-	position:relative;
+	position:fixed;
 	z-index:15;
 
 	&.fixed {
@@ -1485,6 +1539,11 @@ HEADER
 		margin: 0 0 0 25px;
 		padding: 5px 0;
 		width:150px;
+        vertical-align:top;
+
+        &:first-of-type {
+            width:110px;
+        }
 
 		.user_picture {
 			float:left;
@@ -1492,7 +1551,7 @@ HEADER
 		}
 
 		.user_info {
-			margin-top:7px;
+			margin-top:12px;
 			display: block;
 			position: relative;
 
@@ -1606,7 +1665,6 @@ HEADER
 	.btn_dasboard {
 		margin-left:25px;
 	}
-
 	.dasboard_container {
 		display:none;
 
@@ -1620,13 +1678,35 @@ HEADER
 			.box-shadow(0 3px 20px rgba(0, 0, 0, 0.15));
 			.border-radius(@smallBorderRadius);
 		}
+
+
+}
+
+.dasboard_container {
+	display:none;
+	position:absolute;
+	top:30px;left:25px;
+	width:1000px;
+	height:380px;
+	background:@white;
+	.box-shadow(0 3px 20px rgba(0, 0, 0, 0.15));
+	.border-radius(@smallBorderRadius);
+	z-index:200;
+
+	&.active {
+		display:block;
 	}
 }
 
 .submenu_nav {
 	.inline-block;
 
+    .btn {
+        margin:0;
+    }
+
 	li {
+        margin-right:8px;
 		display: inline-block;
 		vertical-align: top;
 		position: relative;
@@ -1635,7 +1715,22 @@ HEADER
 		&.active {
 			
 			.sumbenu_dropdown {
+                width:100%;
+		        top:100%;
 				display:block;
+                background:@white-first;
+                border-color:@lightGray;
+                border-style:solid;
+                border-width:0 1px 1px 1px;
+
+                li {
+                    margin:0;
+                }
+
+                .btn {
+                    width:100%;
+                    margin:5px auto 0;
+                }
 			}			
 		}
 	}
@@ -1647,7 +1742,6 @@ HEADER
 	.sumbenu_dropdown {
 		display:none;
 		position:absolute;
-		top:100%;
 
 		& > li {
 			display:block;
@@ -1727,9 +1821,16 @@ MENU SIDEBAR
 ======================================================
 */
 
+.not_fixed_header {
+
+    .main_content {
+        padding-top:0;
+    }
+}
 
 .main_content {
 	height:100%;
+    padding-top:100px;
 }
 
 
@@ -1794,7 +1895,7 @@ MENU SIDEBAR
 
 		li {
 			display: block;	
-			width: 225px;
+			width: 225px;		
 		}
 
 		a {
@@ -1891,11 +1992,6 @@ MENU SIDEBAR
 		.transition-duration(0.2s);
 		width:225px;
 	}
-
-	.holder_sidebar_info{
-		.transition-duration(0.2s);
-		width: 225px;
-	}
 }
 
 
@@ -1912,9 +2008,9 @@ MENU SIDEBAR
 
 /*
 ======================================================
-
-PROFILE / COMPANY PROFILE / DASHBOARD SIDEBAR
-
+ 
+ PROFILE / COMPANY PROFILE / DASHBOARD SIDEBAR
+ 
 ======================================================
 */
 .sidebar_left{
@@ -1965,7 +2061,7 @@ PROFILE / COMPANY PROFILE / DASHBOARD SIDEBAR
 			border-bottom: 1px solid @lightestGray-nineteen;
 		}
 
-		+.holder_sidebar_blocks{
+		.holder_sidebar_blocks{
 			padding-top: 0;
 		}	
 	}
@@ -2025,7 +2121,6 @@ PROFILE / COMPANY PROFILE / DASHBOARD SIDEBAR
 						margin: 0 auto;
 					}
 				}
-
 				p{
 					display: inline-block;
 					vertical-align: middle;
@@ -2064,7 +2159,6 @@ PROFILE / COMPANY PROFILE / DASHBOARD SIDEBAR
 				font-size: @smallestFontSize-second;
 				font-weight: bold;
 				text-transform: uppercase;
-
 				span{
 					display: inline-block;
 					width: 20px;
@@ -2217,9 +2311,10 @@ PROFILE / COMPANY PROFILE / DASHBOARD SIDEBAR
 					}
 				}
 			}
-		}
+	}
 	}
 }
+
 
 /*
 ======================================================
@@ -2233,7 +2328,7 @@ CONTENT PART
 
 
 .content_container {
-	padding-left:0;
+	padding-left:22px;
 	.transition-duration(0.2s);
 	overflow: hidden;
 	padding-bottom: 50px;
@@ -2441,7 +2536,7 @@ TRUCK SEARCH
 	width:204px;
 }
 
-.sidebar_left {
+.sidebar_truck_search {
 
 	.seppline  {
 
@@ -2852,13 +2947,13 @@ LOGIN PAGE
 
 }
 
-/*
-======================================================
-
-PUBLIC PROFILE PAGE
-
-======================================================
-*/
+ /*
+ ======================================================
+ 
+ PUBLIC PROFILE PAGE
+ 
+ ======================================================
+ */
 .content_holder{
 	padding: 20px 25px;
 
@@ -2868,7 +2963,31 @@ PUBLIC PROFILE PAGE
 			color: @darkGray;
 		}
 	}
+.sidebar_right {
+	position:fixed;
+	z-index:10;
+	height:100%;
+	top:0;right:0;
+	padding-top:100px;
+	border-left: 1px solid @lighterGray-twelfth;
+	background: @white-third;
+	width:0;
+	overflow:hidden;
 
+
+	.drag_sidebar {
+		position:absolute;
+		top:0; bottom:0;left:0;
+		background-color:@lighterGray-eighth;
+		background-position: -329px -82px;
+		.border-radiuses (0,3px, 3px, 0);
+		display:block;
+		height:40px;
+		width:4px;
+		margin:auto;
+		cursor: w-resize;
+	}
+ 
 	h4{
 		color: @darkGray;
 	}
@@ -3033,13 +3152,12 @@ PUBLIC PROFILE PAGE
 }
 
 /*
-======================================================
+=======================================================
 
 PUBLIC COMPANY PROFILE PAGE
 
 ======================================================
 */
-
 .company_info_holder{
 	.info_about{
 		display: table;
@@ -3083,7 +3201,7 @@ PUBLIC COMPANY PROFILE PAGE
 						margin: 0 2px;
 					}
 				}
-			}
+		}
 
 			.buttons_block{
 				margin: 25px 0 30px;
@@ -3124,13 +3242,12 @@ PUBLIC COMPANY PROFILE PAGE
 							float: left;
 							margin: 2px 0 0;
 						}
-						.date_comment{
+					.date_comment{
 							float: right;
 							font-size: @smallerFontSize;
 							color: @lightestGray
 						}
 					}
-
 					p{
 						line-height: 1.6;
 					}
@@ -3144,7 +3261,6 @@ PUBLIC COMPANY PROFILE PAGE
 					resize: none;
 					margin: 0 0 10px;
 				}
-
 				button{
 					float: right;
 				}
@@ -3274,6 +3390,8 @@ DASHBOARD PAGE
 		}
 	}
 }
+
+
 
 /*
 ======================================================
@@ -3513,6 +3631,7 @@ SLICK GRID TRASH
       position: absolute;
       border: 0px;
       width: 100%;
+      /*height: 150px !important;*/
       -webkit-transition: background-color 0.1s ease-out;
       -moz-transition: background-color 0.1s ease-out;
       -o-transition: background-color 0.1s ease-out;
@@ -3531,9 +3650,8 @@ SLICK GRID TRASH
       /*border-right: 1px solid #e5e5e5;*/
       vertical-align: middle;
       z-index: 1;
-      padding: 8px 10px;
+      padding: 8px 0;
       margin: 0;
-      white-space: nowrap;
       cursor: default;
       overflow: hidden;
       -o-text-overflow: ellipsis;
@@ -3541,6 +3659,10 @@ SLICK GRID TRASH
       font-size: 13px;
       line-height: 15px;
       color: #555555;
+
+      &.slick-cell-checkboxsel {
+          padding-left:10px;
+      }
 
         .highlighted {
           background: #f2f2f2;
@@ -3562,7 +3684,7 @@ SLICK GRID TRASH
 /*new slick grid styles*/
 
 .slick-cell {
-
+    //height: 150px !important;
     .main-cell-row {
         margin: 5px 0 8px 0;
         height:32px;
@@ -3573,7 +3695,7 @@ SLICK GRID TRASH
         margin-top:10px;
     }
     
-    &.first-cell {
+    .first-cell {
 
         .main-cell-row, .footer-cell-row {
             margin-left:20px;
@@ -3697,6 +3819,7 @@ SLICK GRID TRASH
         .border-radius(@smallestBorderRadius);
         color: #ffffff;
         padding: 2px 7px;
+        margin-left:5px;
     }
 
     .tags-list {
@@ -3711,6 +3834,26 @@ SLICK GRID TRASH
             top:0;left:0;
             background: url(../images/icons.png) -160px -95px;
             .opacity(0.5);
+        }
+    }
+}
+
+
+.slick-columnpicker {
+    background:@white-first;
+    border:1px solid @lightGray;
+    padding:5px;
+
+    li {
+        list-style:none;
+
+        label {
+            display:block;
+            padding:3px 0;
+        }
+
+        input {
+            margin-right:5px;
         }
     }
 }
@@ -3748,7 +3891,7 @@ POPUP
 		.popup_navigation {
 			float:right;
 
-			li {
+			& >li {
 				.inline-block;
 				margin-left:3px;
 
@@ -3836,6 +3979,8 @@ EXTENSIONS
 
 		img {
 			display:block;
+            width:24px;
+		    height:24px;
 		}
 	}
 
@@ -3919,12 +4064,20 @@ body.extension_bar .chat_container {
 
 	.chat_body {
 
+        .message{
+            img{
+                width:24px;
+                height:24px;
+            }
+        }
+
 		.message_out {
 			margin:12px 0;
 
 			.user_piture {
 				float:left;
 				margin:0 10px 0 5px;
+
 			}
 			.message_body {
 				float:left;
@@ -4007,6 +4160,211 @@ body.extension_bar .chat_container {
 
 }
 
+
+/*
+======================================================
+
+INDEX PAGE
+
+======================================================
+*/
+
+.sidebar_profile {
+	.logo_block {
+	
+		.img_holder {
+			width: 72px;
+		}
+
+		.title_holder {
+			vertical-align: top;
+
+			span {
+				display:block;
+				margin:10px 0;
+			}
+
+			a {
+				text-decoration: underline;
+
+			}
+		}
+
+	}
+
+	.profile_details_block {
+
+		h4 {
+			color:@lighterGray-fourth;
+
+		}
+
+		a {
+			display: block;
+
+				&:hover {
+
+					.figures {
+						color:@red;
+					}
+				}
+				
+			.figures {
+				float:right;
+				color:@lighterGray-fourth;
+			}
+		}
+	}
+}
+
+.one_third {
+	font-size:@normalFontSize;
+	display:inline-block;
+	width:33%;
+	margin:0;
+	float:none;
+	vertical-align: top;
+}
+
+.index_board {
+	font-size:0;
+	padding:25px;
+
+	.one_third {
+		padding-right:3%;
+
+
+	}
+
+	h2 {
+		 margin-bottom:30px;
+	}
+
+	.index_board_list {
+		margin-bottom:35px;
+
+		li {
+
+			a {
+				display:block;
+				padding:7px 5px;
+
+				&:hover {
+					background:@white-second;
+				}
+			}
+
+			i {
+				float:left;
+				height:35px;
+				width:35px;
+
+				&.empty {
+					background-position:0px -309px;
+				}
+			}
+
+		}
+	}
+
+	.index_board_desc {
+		margin-left:50px;
+		display:block;
+		height:30px;
+		overflow:hidden;
+		font-size:@smallerFontSize;
+
+		.title {
+			display:block;
+			color:@lighterGray;
+			margin-bottom:5px;
+		}
+
+		.subtitle {
+			display:block;
+			color:@lighterGray-fourth;
+		}
+	}
+}
+
+.dasboard_container {
+
+	.dashboard_nav {
+		width:22%;
+		float:left;
+		border-right:1px solid @lighterGray-seventeenth;
+		height:100%;
+
+		header {
+			border-bottom:1px solid @lighterGray-seventeenth;
+			text-align:center;
+
+			h4 {
+				line-height:50px;
+				margin:0;
+			}
+		}
+
+		.icon_dasnboard {
+			display:inline-block;
+			vertical-align: middle;
+		}
+
+	}
+
+
+	.dashboard_nav_lists {
+		width:78%;
+		float:left;
+		padding-top:50px;
+
+	}
+
+	.index_board {	
+
+		.index_board_desc {
+			margin-left:35px;
+			height:25px;
+			
+			.title {
+				line-height:25px;
+			}
+		}
+
+
+		.index_board_list {
+
+			li {
+
+				a {
+					display:block;
+					padding:4px 0;
+
+					&:hover {
+						background:none;
+
+						span {
+							color:@red;
+						}
+					}
+				}
+
+				i {
+					float:left;
+					height:25px;
+					width:25px;
+
+					&.empty {
+						background-position:0px -360px;
+					}
+				}
+
+			}
+		}
+
+	}
+
+}
 /*
 ======================================================
 
@@ -4269,3 +4627,5 @@ RESPONSIVE
 #pager1 {
     height:auto !important; // костыль для того, чтобы пэйджер нормально выглядел. т.к. там инлайново height:20px;
 }
+
+.angular-google-map-container { height: 400px; }
