@@ -161,6 +161,7 @@ ALL VARIABLES
 @lightestGray-sixth:	#787878;
 @lightestGray-seventh:	#8b8b8b;
 @lightestGray-eighth:	#e6e6e6;
+@lightestGray-nineteen:	#d9d9d9;
 
 @red: 					#d9534f;
 @red-second: 			#d53c37;
@@ -177,6 +178,7 @@ ALL VARIABLES
 @normalFontSize: 		13px;
 @smallerFontSize: 		12px;
 @smallestFontSize: 		11px;
+@smallestFontSize-second:10px;
 
 
 /*border radius*/
@@ -374,6 +376,33 @@ h2 {
 	font-size: 25px;
 	line-height: 30px;
 	font-weight: normal;
+
+	&.seppline{
+		position: relative;
+		font-size: 14px;
+		color: @mainGray;
+		margin-bottom:15px;
+		font-weight: bold;
+
+		&:before {
+			content:"";
+			display:block;
+			position:absolute;
+			height:1px;
+			width:100%;
+			background:@lightestGray-eighth;
+			top:0;
+			bottom:0;
+			margin:auto;
+		}
+
+		.text {
+			display:inline-block;
+			position:relative;
+			z-index:2;
+			padding-right:10px;
+		}
+	}
 }
 
 h3 {
@@ -475,6 +504,14 @@ input[type="checkbox"] {
     height:100%;
 }
 
+.img_holder{
+
+	img{
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+}
 /*buttons*/
 
 .btn {
@@ -517,6 +554,38 @@ input[type="checkbox"] {
 	}
 	&:active {
 		.gradient(@white, @lightGray);
+	}
+}
+
+.btn_social{
+	border: 1px solid @lighterGray-fourth;
+	font-weight: bold;
+	.gradient(@white-second, @white);
+	color: @darkGray;
+	position: relative;
+	&.btn_social_icon{
+		padding-left: 32px;
+	}
+	&.btn_liked{
+		color: @blue-first;
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		left: 9px;
+		background: url(../images/icons.png) no-repeat;
+	}
+	span{
+		color: @lightestGray;
+	}
+	&:hover {
+		.gradient(@lightGray, @white);
+	}
+	&:active {
+		.gradient(@white, @white-second);
 	}
 }
 
@@ -628,6 +697,22 @@ input[type="checkbox"] {
     margin-right: 3px;
     width: 15px;
 	background: url(../images/icons.png) no-repeat scroll -758px -90px transparent;
+}
+
+.btn_like:before {
+    background-position: -829px -93px;
+	width: 16px;
+	height: 15px;
+}
+.btn_comment:before {
+    background-position: -853px -96px;
+	width: 16px;
+	height: 14px;
+}
+.btn_share:before {
+    background-position: -877px -92px;
+	width: 11px;
+	height: 18px;
 }
 
 .attach_files_block {
@@ -840,7 +925,35 @@ background-position: -205px -95px;
     }
 }
 
+.icon_driver{
+	background-position: -777px -93px;
+	width: 15px;
+	height: 15px;
+}
 
+.icon_forklift{
+	background-position: -801px -92px;
+	width: 20px;
+	height: 17px;
+}
+
+.icon_email{
+	background-position: -893px -93px;
+	width: 14px;
+	height: 15px;
+}
+
+.icon_phone{
+	background-position: -917px -93px;
+	width: 8px;
+	height: 15px;
+}
+
+.icon_web{
+	background-position: -937px -93px;
+	width: 15px;
+	height: 15px;
+}
 /* icon trucks */
 
 .icon_trucks {
@@ -1681,7 +1794,7 @@ MENU SIDEBAR
 
 		li {
 			display: block;	
-			width: 225px;		
+			width: 225px;
 		}
 
 		a {
@@ -1778,6 +1891,11 @@ MENU SIDEBAR
 		.transition-duration(0.2s);
 		width:225px;
 	}
+
+	.holder_sidebar_info{
+		.transition-duration(0.2s);
+		width: 225px;
+	}
 }
 
 
@@ -1792,7 +1910,316 @@ MENU SIDEBAR
 	}
 }
 
+/*
+======================================================
 
+PROFILE / COMPANY PROFILE / DASHBOARD SIDEBAR
+
+======================================================
+*/
+.sidebar_left{
+	.seppline{
+		.text{
+			color: @darkGray;
+		}
+	}
+
+	.white_sidebar{
+		background: @white;
+		color: @darkGray;
+
+		.seppline{
+			.text{
+				background: @white;
+			}
+		}
+
+	}
+
+	.grey_sidebar{
+		background: @white-first;
+		color: @lightestGray-fifth; 
+
+		.seppline{
+			.text{
+				background: @white-first;
+			}
+		}
+	}
+}
+	
+.holder_sidebar_info{
+	.transition-duration(0.2s);
+	position: fixed;
+	top: 100px;
+	padding-bottom: 17px;
+	width: 0;
+	height: 100%;
+	border-right: 1px solid @lighterGray-sixth;
+	overflow: hidden;
+
+	.holder_sidebar_blocks{
+		padding: 17px 17px 0;
+
+		&.holder_sidebar_blocks_border{
+			border-bottom: 1px solid @lightestGray-nineteen;
+		}
+
+		+.holder_sidebar_blocks{
+			padding-top: 0;
+		}	
+	}
+
+	.logo_block{
+		display: table;
+		margin: 0 0 15px;
+		width: 190px;
+
+		.img_holder{
+			display: table-cell;
+			vertical-align: top;
+			padding: 0 12px 0 0;
+			width: 92px;
+
+			img{
+				display: block;
+				width: 100%;
+				max-width: 100;
+			}
+		}
+
+		.title_holder{
+			display: table-cell;
+			vertical-align: middle;
+
+			h2{
+				font-size: @normalThird;
+				font-weight: bold;
+				line-height: 1.2;
+				margin: 0;
+			}
+
+			span{
+				font-size: @smallerFontSize ;
+				color: @lightestGray;
+				font-style: italic;
+			}
+		}
+	}
+
+	.sidebar_block{
+		width: 190px;
+		line-height: 1.6;
+
+		.contact_list_with_icon{
+			margin: 0 0 16px;
+
+			li{
+				span{
+					display: inline-block;
+					vertical-align: middle;
+					width: 15px;
+					margin: 0 12px 0 0;
+
+					i{
+						margin: 0 auto;
+					}
+				}
+
+				p{
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		.contact_list{
+			li{
+				span{
+					color: @lightestGray;
+					display: inline-block;
+					margin: 0 2px 0 0;
+				}
+			}
+			
+		}
+
+		.info_connection{
+			li{
+				display: table;
+				width: 100%;
+
+				span{
+					display: table-cell;
+
+					+span{
+						text-align: right;
+					}
+				}
+			}
+		}
+
+		.professions_list{
+			li{	
+				font-size: @smallestFontSize-second;
+				font-weight: bold;
+				text-transform: uppercase;
+
+				span{
+					display: inline-block;
+					width: 20px;
+					margin: 0 10px 0 0;
+					position: relative;
+					top: 3px;
+
+					i{
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+
+		.block_with_border{
+			border: 1px solid @lighterGray-thirteenth;
+			border-radius: 3px;
+			padding: 4px 4px 0;
+		}
+
+		.block_tags {
+			span{
+				display: inline-block;
+				margin: 0 2px 5px 0;
+				padding: 4px 17px 3px 6px;
+				background: #f2f2f2;
+				.border-radiuses(2px, 2px, 2px, 2px);
+				position: relative;
+
+				&:before{
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					margin: auto 0;
+					right: 4px;
+					background: url(../images/icons.png) no-repeat -961px -96px;
+					width: 9px;
+					height: 8px;
+				}
+			}
+		}
+
+		.more_link{
+			color: @lightestGray;
+			line-height: 1;
+			display: inline-block;
+			margin: 10px 0 0;
+			position: relative;
+			padding: 0 0 0 10px;
+			
+			span{
+				border-bottom: 1px dotted @lightestGray;
+			}
+
+			&:hover{
+				span{
+				border-color: transparent;
+				}
+			}
+
+			&:before{
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 4px;
+				background: url(../images/icons.png) no-repeat -976px -97px;
+				width: 7px;
+				height: 5px;
+			}
+		}
+
+		.list_photo{
+			font-size: 0;
+			width: 192px;
+			margin: 0 0 0 -4px;
+
+			li{
+				display: inline-block;
+				vertical-align: top;
+				width: 40px;
+				margin: 0 4px 8px;
+				font-size: @smallerFontSize;
+
+				img{
+					width: 100%;
+					max-width: 100%;
+					display: block;
+				}
+			}
+		}
+
+		.list_photo_with_desc{
+			li{
+				cursor: pointer;
+				position: relative;
+
+				.info_about{
+					display: none;
+					background: #fff;
+					position: absolute;
+					top: 31px;
+					left: -10px;
+					border: 1px solid @lightestGray-nineteen;
+					.border-radiuses(2px, 2px, 2px, 2px);
+					padding: 9px;
+					width: 194px;
+					z-index: 10;
+
+					&:before{
+						content: "";
+						position: absolute;
+						top: -10px;
+						left: 18px;
+						background: url(../images/icons.png) no-repeat -1px -143px;
+						width: 22px;
+						height: 11px;
+					}
+
+					.img_holder{
+						float: left;
+						width: 40px;
+						margin: 0 10px 0 0;
+
+						img{
+							display: block;
+							max-width: 100%;
+							width: 100%;
+						}
+					}
+					h4{
+						margin: 0 0 4px;
+					}
+
+					span{
+						color: @lightestGray;
+						font-style: italic; 
+					}
+				}
+				>img{
+					.transition-duration(0.2s);
+					.opacity(1);
+				}
+				&:hover{
+					.info_about{
+						display: block;
+					}
+					>img{
+						.opacity(0.4);
+					}
+				}
+			}
+		}
+	}
+}
 
 /*
 ======================================================
@@ -2014,7 +2441,7 @@ TRUCK SEARCH
 	width:204px;
 }
 
-.sidebar_truck_search {
+.sidebar_left {
 
 	.seppline  {
 
@@ -2423,6 +2850,429 @@ LOGIN PAGE
 
 	}
 
+}
+
+/*
+======================================================
+
+PUBLIC PROFILE PAGE
+
+======================================================
+*/
+.content_holder{
+	padding: 20px 25px;
+
+	.seppline{
+		.text{
+			background: #fff;
+			color: @darkGray;
+		}
+	}
+
+	h4{
+		color: @darkGray;
+	}
+
+	.search_container{
+		margin: 0 0 13px;
+		width: 100%;
+		position: relative;
+
+		input{
+			width: 97%;
+		}
+
+		button{
+			width: 3%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto 0;
+		}
+	}
+}
+
+.profile_holder{
+	.holder_list{
+		margin: 0 0 10px;
+
+		.item {
+			border-top: 1px solid @lightestGray-eighth;
+			padding: 22px 0 25px;
+
+			&:first-child{
+				border: none;
+				padding-top: 0;
+			}
+
+			.logo_item{
+				float: left;
+				width: 40px;
+				margin: 0 12px 0 0;
+
+				img{
+					max-width: 100%;
+					display: block;
+				}
+			}
+
+			.info_about{
+				overflow: hidden;
+
+				.data_work{
+					margin: 2px 0 9px;
+					font-size: 0;
+
+					h4{
+						display: inline-block;
+						border-right: 1px solid @lightestGray-eighth;
+						padding: 0 18px 0 0;
+						line-height: 1;
+						margin: 0;
+					}
+
+					span{
+						display: inline-block;
+						padding: 0 16px;
+						border-right: 1px solid @lightestGray-eighth;
+						font-size: @smallerFontSize;
+
+						&:last-child{
+							border: none;
+						}
+
+						&.period{
+							font-style: italic;
+							color: @lightestGray;
+						}
+					}
+
+				}
+
+				p{
+					color: @lightestGray-fifth;
+				}
+			}
+		}
+
+	}
+	.professions_list{
+		font-size: 0;
+
+		.item{
+			width: 50%;
+			display: inline-block;
+			font-size: @normalFontSize;
+			vertical-align: top;
+			
+			h3{
+				font-size: @normalFontSize;
+				text-transform: uppercase;
+				font-weight: bold;
+				color: @darkGray;
+				margin: 0 0 5px;
+
+				i{
+					display: inline-block;
+					margin: 0 8px 0 0;
+					position: relative;
+					top: 3px;
+				}
+			}
+
+			.info_about{
+				position: relative;
+
+				&:before{
+					content: '';
+					position: absolute;
+					top: 0;
+					height: 100%;
+					width: 1px;
+					background: @lightestGray-eighth;
+
+				}
+
+				p{
+					font-weight: bold;
+					color: #545454;
+					margin: 0 0 8px;
+
+					span{
+						color: @lightestGray;
+						font-weight: normal;
+					}
+				}
+			}
+
+			&:nth-child(odd){
+				.info_about{
+					&:before{
+						right: 0;
+					}
+				}
+			}
+
+			&:nth-child(even){
+				h3{
+					padding: 0 0 0 20%;
+				}
+
+				.info_about{
+					padding: 0 0 0 20%;
+
+					&:before{
+						right: 100%;
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+/*
+======================================================
+
+PUBLIC COMPANY PROFILE PAGE
+
+======================================================
+*/
+
+.company_info_holder{
+	.info_about{
+		display: table;
+		border-top: 1px solid @lightestGray-eighth;
+		padding: 30px 0;
+		
+		&:first-child{
+			border: none;
+			padding-top: 0;
+		}
+
+		.img_holder{
+			display: table-cell;
+			vertical-align: top;
+			width: 103px;
+			padding: 0 23px 0 0;
+		}
+
+		.text_block{
+			display: table;
+			vertical-align: top;
+
+			p{
+				color: @darkGray;
+				line-height: 1.9;
+				margin: 0 0 5px;
+			}
+
+			.title_block{
+				h4{
+					float: left;
+				}
+
+				p{
+					float: right;
+					font-size: @smallerFontSize;
+
+					span{
+						color: @lightestGray;
+						display: inline-block;
+						margin: 0 2px;
+					}
+				}
+			}
+
+			.buttons_block{
+				margin: 25px 0 30px;
+
+				.btn{
+					margin: 0 16px 0 0;
+
+					&:last-child{
+						margin: 0;
+						float: right;
+					}
+				}
+
+			}
+
+			.comments_block{
+				border-top: 1px solid @lightestGray-eighth;
+				padding: 15px 0;
+				
+				.comment_item{
+					margin: 0 0 8px;
+				
+					.comment_title_block{
+						margin: 0 0 10px;
+
+						.avatar{
+							float: left;
+							margin: 0 11px 0 0;
+							width: 24px;
+
+							img{
+								display: block;
+								max-width: 100%;
+								width: 100%;
+							}
+						}
+						h4{
+							float: left;
+							margin: 2px 0 0;
+						}
+						.date_comment{
+							float: right;
+							font-size: @smallerFontSize;
+							color: @lightestGray
+						}
+					}
+
+					p{
+						line-height: 1.6;
+					}
+				}
+
+				textarea{
+					width: 100%;
+					font: italic @smallerFontSize @fontArial;
+					padding: 7px;
+					height: 50px;
+					resize: none;
+					margin: 0 0 10px;
+				}
+
+				button{
+					float: right;
+				}
+			}
+		}		
+	}
+
+	.company_info{
+		text-align: right;
+		margin: 10px 0 0;
+
+		div{
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+			padding: 0 23px;
+			border-right: 1px solid @lightestGray-eighth;
+
+			&:last-child{
+				text-align: left;
+				border: none;
+			}
+
+			h4{
+				color: @lightestGray;
+				margin: 0 0 7px;
+			}
+
+			p{
+				font-size: @smallerFontSize;
+
+				span.number{
+					font-size: @normalThird;
+				}
+			}
+
+			ul{
+				font-size: 0;
+				display: inline-block;
+				vertical-align: bottom;
+
+				li{
+					display: inline-block;
+					width: 24px;
+					height: 24px;
+					margin: 0 8px 0 0;
+
+					img{
+						display: block;
+						width: 100%;
+						max-width: 100%;
+					}
+				}
+			}
+
+			a.more_link{
+				text-decoration: underline;
+				display: inline-block;
+				vertical-align: bottom;
+				color: @lightestGray;
+				margin: 0 0 4px;
+
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+}
+
+/*
+======================================================
+
+DASHBOARD PAGE
+
+======================================================
+*/
+.list_results{
+	.item{
+		padding: 23px 0;
+		border-top: 1px solid @lightestGray-eighth;
+
+		&:first-child{
+			border: none;
+		}
+		
+		.img_holder{
+			float: left;
+			margin: 0 12px 0 0;
+			width: 40px;
+		}
+
+		.info_text{
+			float: left;
+			font-size: @smallerFontSize;
+
+			h4{
+				margin: 0 0 5px;
+			}
+		}
+		
+		button{
+			float: right;
+			width: 100px;
+			margin: 5px 0 0;
+
+			&.btn_success{
+				background: @white-first;
+				border-color: @white-first;
+				position: relative;
+				text-indent: -9999px;
+
+				&:before{
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin: auto;
+					background: url(../images/icons.png) no-repeat -34px -143px;
+					width: 15px;
+					height: 13px;
+				}
+			}
+		}
+	}
 }
 
 /*
